@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+{% block title %}{% if placement %}Edit Placement{% else %}Record Placement{% endif %} - PlacementHub{% endblock %}
+{% block page_title %}{% if placement %}Update Placement Record{% else %}Record New Placement{% endif %}{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="card border-0 shadow-sm rounded-3">
+            <div class="card-header bg-white border-bottom py-3 d-flex justify-content-between align-items-center">
+                <h5 class="mb-0 fw-bold">
+                    <i class="bi bi-briefcase text-primary me-2"></i>
+                    {% if placement %}Update Placement Application{% else %}Record Student Placement Application{% endif %}
+                </h5>
+                <a href="{{ url_for('placements.index') }}" class="btn btn-outline-secondary btn-sm">
+                    <i class="bi bi-arrow-left me-1"></i>Back to Placements
+                </a>
+            </div>
+
+            <div class="card-body p-4">
+                <form method="POST" action="{% if placement %}{{ url_for('placements.edit', placement_id=placement.id) }}{% else %}{{ url_for('placements.add') }}{% endif %}">
+                    {% if not placement %}
+                    <div class="row g-3 mb-3">
+                        <div class="col-md-6">
+                            <label for="student_id" class="form-label fw-semibold">Select Candidate <span class="text-danger">*</span></label>
+                            <select class="form-select" id="student_id" name="student_id" required>
+                                <option value="">Choose student...</option>
+                                {% for s in students %}
+                                    <option value="{{ s.id }}" {% if form_data.get('student_id')|int == s.id %}selected{% endif %}>
+                                        {{ s.name }} ({{ s.register_number }}) - CGPA: {{ s.cgpa }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="company_id" class="form-label fw-semibold">Select Recruiting Company <span class="text-danger">*</span></label>
+                            <select class="form-select" id="company_id" name="company_id" required>
+                                <option value="">Choose company drive...</option>
+                                {% for c in companies %}
+                                    <option value="{{ c.id }}" {% if form_data.get('company_id')|int == c.id %}selected{% endif %}>
+                                        {{ c.company_name }} - {{ c.job_role }} ({{ c.package }} LPA)
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    {% else %}
+                    <div class="alert alert-light border mb-4">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <strong>Student:</strong> {{ placement.student.name }} ({{ placement.student.register_number }})
+                            </div>
+                            <div class="col-sm-6">
+                                <strong>Company:</strong> {{ placement.company.company_name }} ({{ placement.company.job_role }})
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-4">
+                            <label for="status" class="form-label fw-semibold">Placement Status <span class="text-danger">*</span></label>
+                            <select class="form-select" id="status" name="status" required>
+                                {% for st in statuses %}
+                                    <option value="{{ st }}" {% if (placement and placement.status == st) or form_data.get('status') == st %}selected{% endif %}>
+                                        {{ st }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="salary" class="form-label fw-semibold">Offered Salary Package (LPA)</label>
+                            <div class="input-group">
+                                <input type="number" step="0.1" min="0" class="form-control" id="salary" name="salary" value="{{ form_data.get('salary', placement.salary if placement else 0.0) }}">
+                                <span class="input-group-text">LPA</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="placement_date" class="form-label fw-semibold">Placement / Drive Date</label>
+                            <input type="date" class="form-control" id="placement_date" name="placement_date" value="{{ form_data.get('placement_date', placement.placement_date.strftime('%Y-%m-%d') if (placement and placement.placement_date) else '') }}">
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-end gap-2 border-top pt-3">
+                        <a href="{{ url_for('placements.index') }}" class="btn btn-light px-4">Cancel</a>
+                        <button type="submit" class="btn btn-primary px-4">
+                            <i class="bi bi-check-lg me-1"></i>{% if placement %}Save Changes{% else %}Record Placement{% endif %}
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

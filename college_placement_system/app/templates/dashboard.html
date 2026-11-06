@@ -1,0 +1,191 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - PlacementHub{% endblock %}
+{% block page_title %}Placement Overview Dashboard{% endblock %}
+
+{% block content %}
+<!-- KPI Cards Row -->
+<div class="row g-3 mb-4">
+    <!-- Total Students -->
+    <div class="col-sm-6 col-xl-3">
+        <div class="kpi-card d-flex align-items-center justify-content-between">
+            <div>
+                <div class="kpi-title">Total Students</div>
+                <div class="kpi-value text-primary">{{ total_students }}</div>
+            </div>
+            <div class="kpi-icon-wrapper bg-primary bg-opacity-10 text-primary">
+                <i class="bi bi-people-fill"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Placed Students -->
+    <div class="col-sm-6 col-xl-3">
+        <div class="kpi-card d-flex align-items-center justify-content-between">
+            <div>
+                <div class="kpi-title">Placed Candidates</div>
+                <div class="kpi-value text-success">{{ placed_students }}</div>
+                <small class="text-success fw-semibold"><i class="bi bi-arrow-up-right"></i> {{ placement_percentage }}% Rate</small>
+            </div>
+            <div class="kpi-icon-wrapper bg-success bg-opacity-10 text-success">
+                <i class="bi bi-patch-check-fill"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Unplaced Students -->
+    <div class="col-sm-6 col-xl-3">
+        <div class="kpi-card d-flex align-items-center justify-content-between">
+            <div>
+                <div class="kpi-title">Unplaced Candidates</div>
+                <div class="kpi-value text-warning">{{ unplaced_students }}</div>
+                <small class="text-muted">In Active Drive</small>
+            </div>
+            <div class="kpi-icon-wrapper bg-warning bg-opacity-10 text-warning">
+                <i class="bi bi-person-x-fill"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Companies Visited -->
+    <div class="col-sm-6 col-xl-3">
+        <div class="kpi-card d-flex align-items-center justify-content-between">
+            <div>
+                <div class="kpi-title">Recruiting Partners</div>
+                <div class="kpi-value text-info">{{ companies_visited }}</div>
+                <small class="text-muted">Top Tier Recruiters</small>
+            </div>
+            <div class="kpi-icon-wrapper bg-info bg-opacity-10 text-info">
+                <i class="bi bi-buildings-fill"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Secondary KPI Row (Salary Packages) -->
+<div class="row g-3 mb-4">
+    <div class="col-md-6">
+        <div class="card border-0 shadow-sm p-3 bg-white rounded-3 d-flex flex-row align-items-center justify-content-between">
+            <div>
+                <span class="text-muted small fw-semibold text-uppercase">Average Salary Package</span>
+                <h3 class="fw-bold mb-0 text-dark">{{ avg_package }} <small class="text-muted fs-6">LPA</small></h3>
+            </div>
+            <div class="p-3 bg-secondary bg-opacity-10 text-dark rounded-circle fs-4">
+                <i class="bi bi-cash-stack"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card border-0 shadow-sm p-3 bg-white rounded-3 d-flex flex-row align-items-center justify-content-between">
+            <div>
+                <span class="text-muted small fw-semibold text-uppercase">Highest Salary Offered</span>
+                <h3 class="fw-bold mb-0 text-success">{{ max_package }} <small class="text-muted fs-6">LPA</small></h3>
+            </div>
+            <div class="p-3 bg-success bg-opacity-10 text-success rounded-circle fs-4">
+                <i class="bi bi-trophy-fill"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Charts Row -->
+<div class="row g-4 mb-4">
+    <!-- Department Chart -->
+    <div class="col-lg-7">
+        <div class="dashboard-card">
+            <div class="dashboard-card-header">
+                <span><i class="bi bi-bar-chart-fill text-primary me-2"></i>Department Placement Distribution</span>
+                <a href="{{ url_for('analytics.index') }}" class="btn btn-sm btn-link text-decoration-none">View Full Analytics</a>
+            </div>
+            <div class="dashboard-card-body" style="height: 320px;">
+                <canvas id="deptPlacementChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Year Trends Chart -->
+    <div class="col-lg-5">
+        <div class="dashboard-card">
+            <div class="dashboard-card-header">
+                <span><i class="bi bi-graph-up-arrow text-success me-2"></i>Year-wise Placement Trend</span>
+                <span class="badge bg-light text-muted border">2023 - 2026</span>
+            </div>
+            <div class="dashboard-card-body" style="height: 320px;">
+                <canvas id="yearTrendChart"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Recent Placements Table -->
+<div class="dashboard-card">
+    <div class="dashboard-card-header">
+        <span><i class="bi bi-clock-history text-secondary me-2"></i>Recent Placement & Interview Updates</span>
+        <a href="{{ url_for('placements.index') }}" class="btn btn-sm btn-outline-primary">Manage All Placements</a>
+    </div>
+    <div class="table-responsive">
+        <table class="table custom-table table-hover align-middle mb-0">
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Register Number</th>
+                    <th>Company</th>
+                    <th>Job Role</th>
+                    <th>Package</th>
+                    <th>Status</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if recent_placements %}
+                    {% for p in recent_placements %}
+                    <tr>
+                        <td class="fw-semibold">{{ p.student.name if p.student else 'Unknown' }}</td>
+                        <td><code>{{ p.student.register_number if p.student else '-' }}</code></td>
+                        <td><i class="bi bi-building me-1 text-muted"></i>{{ p.company.company_name if p.company else '-' }}</td>
+                        <td>{{ p.company.job_role if p.company else '-' }}</td>
+                        <td class="fw-semibold">{{ p.salary }} LPA</td>
+                        <td>
+                            {% if p.status == 'Selected' %}
+                                <span class="badge badge-placed"><i class="bi bi-check2-circle me-1"></i>Selected</span>
+                            {% elif p.status == 'Shortlisted' %}
+                                <span class="badge badge-shortlisted">Shortlisted</span>
+                            {% elif p.status == 'Applied' %}
+                                <span class="badge badge-applied">Applied</span>
+                            {% else %}
+                                <span class="badge badge-rejected">{{ p.status }}</span>
+                            {% endif %}
+                        </td>
+                        <td class="text-muted small">{{ p.placement_date or '-' }}</td>
+                    </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td colspan="7" class="text-center py-4 text-muted">No placement records found.</td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Department chart data passed safely via Jinja2
+        const deptLabels = {{ dept_labels | tojson }};
+        const deptPlaced = {{ dept_placed_counts | tojson }};
+        const deptTotal = {{ dept_total_counts | tojson }};
+
+        renderDepartmentChart('deptPlacementChart', deptLabels, deptPlaced, deptTotal);
+
+        // Year trend data
+        const yearLabels = {{ year_labels | tojson }};
+        const yearPlaced = {{ year_placed_counts | tojson }};
+
+        renderYearTrendChart('yearTrendChart', yearLabels, yearPlaced);
+    });
+</script>
+{% endblock %}
+

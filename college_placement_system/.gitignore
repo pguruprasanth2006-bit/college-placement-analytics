@@ -1,0 +1,39 @@
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Environment files with sensitive credentials
+.env
+
+# Database files
+*.db
+*.sqlite3
+
+# ML Saved Artifacts that shouldn't be tracked if generated
+ml/saved_model/*.pkl
+ml/saved_model/*.joblib
+!ml/saved_model/.gitkeep
+
+# PySpark outputs & Metastore
+spark-warehouse/
+derby.log
+metastore_db/
+spark/output/
+
+# IDE / OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+

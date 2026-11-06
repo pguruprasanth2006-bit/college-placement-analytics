@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+
+{% block title %}Placements Management - PlacementHub{% endblock %}
+{% block page_title %}Placements & Recruitment Drives{% endblock %}
+
+{% block content %}
+<!-- Top Action and Filter Row -->
+<div class="row g-3 mb-4">
+    <div class="col-lg-9">
+        <div class="card border-0 shadow-sm p-3 rounded-3">
+            <form method="GET" action="{{ url_for('placements.index') }}" class="row g-2 align-items-center">
+                <div class="col-md-5">
+                    <select name="company_id" class="form-select bg-light">
+                        <option value="">All Companies</option>
+                        {% for c in companies %}
+                            <option value="{{ c.id }}" {% if selected_company == c.id %}selected{% endif %}>{{ c.company_name }} ({{ c.job_role }})</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <select name="status" class="form-select bg-light">
+                        <option value="">All Statuses</option>
+                        {% for s in statuses %}
+                            <option value="{{ s }}" {% if selected_status == s %}selected{% endif %}>{{ s }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-md-3 d-flex gap-1">
+                    <button type="submit" class="btn btn-primary w-100"><i class="bi bi-funnel me-1"></i>Filter</button>
+                    {% if selected_company or selected_status %}
+                        <a href="{{ url_for('placements.index') }}" class="btn btn-outline-secondary" title="Clear Filters"><i class="bi bi-x-lg"></i></a>
+                    {% endif %}
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-lg-3 text-lg-end d-flex align-items-center justify-content-lg-end">
+        <a href="{{ url_for('placements.add') }}" class="btn btn-success px-3 shadow-sm w-100 w-lg-auto">
+            <i class="bi bi-plus-circle me-1"></i>Record Placement
+        </a>
+    </div>
+</div>
+
+<!-- Company-wise Recruitment Summary Cards -->
+{% if company_stats %}
+<div class="mb-4">
+    <h6 class="text-uppercase text-muted fw-bold small mb-3">Top Recruiting Companies (Selected Offers)</h6>
+    <div class="row g-3">
+        {% for cs in company_stats[:4] %}
+        <div class="col-sm-6 col-md-3">
+            <div class="card border-0 shadow-sm p-3 rounded-3 bg-white">
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                    <strong class="text-dark">{{ cs.company_name }}</strong>
+                    <span class="badge bg-success-subtle text-success fs-6 fw-bold">{{ cs.total_placed }}</span>
+                </div>
+                <small class="text-muted">Avg: {{ (cs.avg_salary or 0)|round(2) }} LPA</small>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+<!-- Placements Master Table -->
+<div class="dashboard-card">
+    <div class="dashboard-card-header">
+        <span><i class="bi bi-list-check text-primary me-2"></i>Placement Application Records ({{ placements|length }})</span>
+    </div>
+    <div class="table-responsive">
+        <table class="table custom-table table-hover align-middle mb-0">
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Reg. Number</th>
+                    <th>Department</th>
+                    <th>Company</th>
+                    <th>Job Role</th>
+                    <th>Package</th>
+                    <th>Status</th>
+                    <th>Date</th>
+                    <th class="text-end">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if placements %}
+                    {% for p in placements %}
+                    <tr>
+                        <td class="fw-semibold">{{ p.student.name if p.student else '-' }}</td>
+                        <td><code>{{ p.student.register_number if p.student else '-' }}</code></td>
+                        <td><span class="badge bg-light text-dark border">{{ p.student.department.department_code if (p.student and p.student.department) else '-' }}</span></td>
+                        <td><i class="bi bi-building me-1 text-muted"></i>{{ p.company.company_name if p.company else '-' }}</td>
+                        <td>{{ p.company.job_role if p.company else '-' }}</td>
+                        <td class="fw-bold">{{ p.salary }} LPA</td>
+                        <td>
+                            {% if p.status == 'Selected' %}
+                                <span class="badge badge-placed"><i class="bi bi-check2-circle me-1"></i>Selected</span>
+                            {% elif p.status == 'Shortlisted' %}
+                                <span class="badge badge-shortlisted">Shortlisted</span>
+                            {% elif p.status == 'Applied' %}
+                                <span class="badge badge-applied">Applied</span>
+                            {% elif p.status == 'Rejected' %}
+                                <span class="badge badge-rejected">Rejected</span>
+                            {% else %}
+                                <span class="badge bg-secondary">{{ p.status }}</span>
+                            {% endif %}
+                        </td>
+                        <td class="text-muted small">{{ p.placement_date or '-' }}</td>
+                        <td class="text-end">
+                            <div class="btn-group btn-group-sm">
+                                <a href="{{ url_for('placements.edit', placement_id=p.id) }}" class="btn btn-outline-secondary" title="Edit">
+                                    <i class="bi bi-pencil"></i>
+                                </a>
+                                <form method="POST" action="{{ url_for('placements.delete', placement_id=p.id) }}" class="d-inline" onsubmit="return confirm('Delete this placement record?');">
+                                    <button type="submit" class="btn btn-outline-danger" title="Delete">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td colspan="9" class="text-center py-5 text-muted">
+                            <i class="bi bi-inbox fs-1 d-block mb-2"></i>
+                            No placement records match the filter.
+                        </td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
+

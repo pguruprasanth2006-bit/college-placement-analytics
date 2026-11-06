@@ -1,0 +1,177 @@
+{% extends "base.html" %}
+
+{% block title %}Eligibility Checker - PlacementHub{% endblock %}
+{% block page_title %}Recruitment Eligibility Engine{% endblock %}
+
+{% block content %}
+<!-- Company Selection Card -->
+<div class="card border-0 shadow-sm p-4 mb-4 rounded-3">
+    <div class="row align-items-center">
+        <div class="col-lg-7">
+            <h5 class="fw-bold text-dark mb-1"><i class="bi bi-funnel-fill text-primary me-2"></i>Select Recruitment Drive to Evaluate Pool</h5>
+            <p class="text-muted small mb-0">Evaluate student qualification rules (CGPA, maximum arrears, eligible academic departments, graduation year).</p>
+        </div>
+        <div class="col-lg-5 mt-3 mt-lg-0">
+            <form method="GET" action="{{ url_for('eligibility.index') }}" class="d-flex gap-2">
+                <select name="company_id" class="form-select bg-light" required onchange="this.form.submit()">
+                    <option value="">-- Choose Company Drive --</option>
+                    {% for c in companies %}
+                        <option value="{{ c.id }}" {% if selected_company_id == c.id %}selected{% endif %}>
+                            {{ c.company_name }} - {{ c.job_role }} (Min CGPA: {{ c.minimum_cgpa }}, {{ c.package }} LPA)
+                        </option>
+                    {% endfor %}
+                </select>
+                <button type="submit" class="btn btn-primary px-3">Evaluate</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% if result %}
+<!-- Criteria Summary Card -->
+<div class="card border-0 shadow-sm rounded-3 p-4 mb-4 bg-white">
+    <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+        <div>
+            <h4 class="fw-bold mb-1 text-primary">{{ result.company.company_name }} - {{ result.company.job_role }}</h4>
+            <span class="text-muted">Target Graduation Year: <strong>{{ result.company.graduation_year }}</strong> | Package: <strong class="text-success">{{ result.company.package }} LPA</strong></span>
+        </div>
+        <div class="d-flex gap-2">
+            <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-2 fs-6">
+                <i class="bi bi-check-circle-fill me-1"></i>{{ result.eligible_count }} Eligible
+            </span>
+            <span class="badge bg-danger-subtle text-danger border border-danger-subtle px-3 py-2 fs-6">
+                <i class="bi bi-x-circle-fill me-1"></i>{{ result.ineligible_count }} Ineligible
+            </span>
+        </div>
+    </div>
+
+    <div class="row g-2 border-top pt-3 small">
+        <div class="col-md-3">
+            <span class="text-muted">Required Minimum CGPA:</span> <strong>{{ result.company.minimum_cgpa }}</strong>
+        </div>
+        <div class="col-md-3">
+            <span class="text-muted">Max Allowed Standing Arrears:</span> <strong>{{ result.company.maximum_arrears }}</strong>
+        </div>
+        <div class="col-md-6">
+            <span class="text-muted">Eligible Disciplines:</span>
+            {% for d in result.company.eligible_departments %}
+                <span class="badge bg-secondary-subtle text-secondary me-1">{{ d.department_code }}</span>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<!-- Tabs for Eligible and Ineligible Pools -->
+<ul class="nav nav-tabs nav-fill mb-3" id="eligibilityTab" role="tablist">
+    <li class="nav-item" role="presentation">
+        <button class="nav-link active fw-bold text-success" id="eligible-tab" data-bs-toggle="tab" data-bs-target="#eligible-pane" type="button" role="tab">
+            <i class="bi bi-check-circle-fill me-2"></i>Eligible Students Pool ({{ result.eligible_count }})
+        </button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link fw-bold text-danger" id="ineligible-tab" data-bs-toggle="tab" data-bs-target="#ineligible-pane" type="button" role="tab">
+            <i class="bi bi-x-circle-fill me-2"></i>Ineligible Students with Exact Rejection Reasons ({{ result.ineligible_count }})
+        </button>
+    </li>
+</ul>
+
+<div class="tab-content" id="eligibilityTabContent">
+    <!-- Eligible Pane -->
+    <div class="tab-pane fade show active" id="eligible-pane" role="tabpanel">
+        <div class="dashboard-card">
+            <div class="table-responsive">
+                <table class="table custom-table table-hover align-middle mb-0">
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Register Number</th>
+                            <th>Department</th>
+                            <th>CGPA</th>
+                            <th>Arrears</th>
+                            <th>Grad Year</th>
+                            <th class="text-end">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% if result.eligible %}
+                            {% for s in result.eligible %}
+                            <tr>
+                                <td class="fw-semibold text-dark">{{ s.name }}</td>
+                                <td><code>{{ s.register_number }}</code></td>
+                                <td><span class="badge bg-light text-dark border">{{ s.department_code }}</span></td>
+                                <td><span class="fw-bold text-success">{{ s.cgpa }}</span></td>
+                                <td><span class="badge bg-success-subtle text-success">{{ s.arrears }}</span></td>
+                                <td>{{ s.graduation_year }}</td>
+                                <td class="text-end">
+                                    <a href="{{ url_for('prediction.index', student_id=s.student_id) }}" class="btn btn-sm btn-outline-primary">
+                                        <i class="bi bi-cpu me-1"></i>Predict Probability
+                                    </a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        {% else %}
+                            <tr>
+                                <td colspan="7" class="text-center py-5 text-muted">No students qualify for this company drive.</td>
+                            </tr>
+                        {% endif %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ineligible Pane -->
+    <div class="tab-pane fade" id="ineligible-pane" role="tabpanel">
+        <div class="dashboard-card">
+            <div class="table-responsive">
+                <table class="table custom-table table-hover align-middle mb-0">
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Register No</th>
+                            <th>Dept</th>
+                            <th>CGPA</th>
+                            <th>Arrears</th>
+                            <th>Grad Year</th>
+                            <th>Exact Disqualification Reasons</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% if result.ineligible %}
+                            {% for s in result.ineligible %}
+                            <tr>
+                                <td class="fw-semibold text-dark">{{ s.name }}</td>
+                                <td><code>{{ s.register_number }}</code></td>
+                                <td><span class="badge bg-light text-dark border">{{ s.department_code }}</span></td>
+                                <td><span class="fw-bold {% if s.cgpa < result.company.minimum_cgpa %}text-danger{% else %}text-muted{% endif %}">{{ s.cgpa }}</span></td>
+                                <td><span class="badge {% if s.arrears > result.company.maximum_arrears %}bg-danger text-white{% else %}bg-light text-dark{% endif %}">{{ s.arrears }}</span></td>
+                                <td>{{ s.graduation_year }}</td>
+                                <td>
+                                    <ul class="list-unstyled mb-0 small">
+                                        {% for reason in s.reasons %}
+                                            <li class="text-danger mb-1"><i class="bi bi-exclamation-triangle-fill me-1"></i>{{ reason }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        {% else %}
+                            <tr>
+                                <td colspan="7" class="text-center py-5 text-muted">All students meet the eligibility criteria!</td>
+                            </tr>
+                        {% endif %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% else %}
+<div class="card border-0 shadow-sm p-5 text-center rounded-3 bg-white">
+    <i class="bi bi-person-check fs-1 text-primary mb-3"></i>
+    <h5 class="fw-bold text-dark">Please select a recruiting company from the dropdown above.</h5>
+    <p class="text-muted">The eligibility engine will automatically cross-match every candidate profile against CGPA, arrears, departments, and batch criteria.</p>
+</div>
+{% endif %}
+{% endblock %}
+

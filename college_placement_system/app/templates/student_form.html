@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% block title %}{% if student %}Edit Student{% else %}Add Student{% endif %} - PlacementHub{% endblock %}
+{% block page_title %}{% if student %}Edit Student Information{% else %}Register New Student{% endif %}{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-10">
+        <div class="card border-0 shadow-sm rounded-3">
+            <div class="card-header bg-white border-bottom py-3">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0 fw-bold">
+                        <i class="bi bi-person-lines-fill text-primary me-2"></i>
+                        {% if student %}Update Profile: {{ student.name }} ({{ student.register_number }}){% else %}Student Enrollment Form{% endif %}
+                    </h5>
+                    <a href="{{ url_for('students.index') }}" class="btn btn-outline-secondary btn-sm">
+                        <i class="bi bi-arrow-left me-1"></i>Back to Directory
+                    </a>
+                </div>
+            </div>
+
+            <div class="card-body p-4">
+                <form method="POST" action="{% if student %}{{ url_for('students.edit', student_id=student.id) }}{% else %}{{ url_for('students.add') }}{% endif %}">
+                    <h6 class="text-uppercase text-muted fw-bold mb-3 small">1. Personal & Contact Information</h6>
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-6">
+                            <label for="name" class="form-label fw-semibold">Full Name <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="name" name="name" value="{{ form_data.get('name', student.name if student else '') }}" required placeholder="e.g. Aditi Rao">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="register_number" class="form-label fw-semibold">Register Number <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="register_number" name="register_number" value="{{ form_data.get('register_number', student.register_number if student else '') }}" required placeholder="e.g. REG2025CSE1001">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="email" class="form-label fw-semibold">Email Address <span class="text-danger">*</span></label>
+                            <input type="email" class="form-control" id="email" name="email" value="{{ form_data.get('email', student.email if student else '') }}" required placeholder="student@college.edu">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="phone" class="form-label fw-semibold">Phone Number</label>
+                            <input type="text" class="form-control" id="phone" name="phone" value="{{ form_data.get('phone', student.phone if student else '') }}" placeholder="e.g. 9876543210">
+                        </div>
+                    </div>
+
+                    <h6 class="text-uppercase text-muted fw-bold mb-3 small border-top pt-3">2. Academic Background</h6>
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-6">
+                            <label for="department_id" class="form-label fw-semibold">Department <span class="text-danger">*</span></label>
+                            <select class="form-select" id="department_id" name="department_id" required>
+                                <option value="">Select Academic Department</option>
+                                {% for d in departments %}
+                                    <option value="{{ d.id }}" {% if form_data.get('department_id')|int == d.id or (student and student.department_id == d.id) %}selected{% endif %}>
+                                        {{ d.department_code }} - {{ d.department_name }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <label for="cgpa" class="form-label fw-semibold">CGPA (0-10) <span class="text-danger">*</span></label>
+                            <input type="number" step="0.01" min="0" max="10" class="form-control" id="cgpa" name="cgpa" value="{{ form_data.get('cgpa', student.cgpa if student else '') }}" required placeholder="e.g. 8.45">
+                        </div>
+                        <div class="col-md-2">
+                            <label for="arrears" class="form-label fw-semibold">Standing Arrears</label>
+                            <input type="number" min="0" class="form-control" id="arrears" name="arrears" value="{{ form_data.get('arrears', student.arrears if student else 0) }}" required>
+                        </div>
+                        <div class="col-md-2">
+                            <label for="graduation_year" class="form-label fw-semibold">Graduation Year <span class="text-danger">*</span></label>
+                            <input type="number" min="2000" max="2040" class="form-control" id="graduation_year" name="graduation_year" value="{{ form_data.get('graduation_year', student.graduation_year if student else 2025) }}" required>
+                        </div>
+                    </div>
+
+                    <h6 class="text-uppercase text-muted fw-bold mb-3 small border-top pt-3">3. Assessment Scores & Technical Background (ML Features)</h6>
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-3">
+                            <label for="aptitude_score" class="form-label fw-semibold">Aptitude Score (0-100)</label>
+                            <input type="number" min="0" max="100" class="form-control" id="aptitude_score" name="aptitude_score" value="{{ form_data.get('aptitude_score', student.aptitude_score if student else 75) }}" required>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="technical_score" class="form-label fw-semibold">Technical Score (0-100)</label>
+                            <input type="number" min="0" max="100" class="form-control" id="technical_score" name="technical_score" value="{{ form_data.get('technical_score', student.technical_score if student else 75) }}" required>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="communication_score" class="form-label fw-semibold">Communication (0-100)</label>
+                            <input type="number" min="0" max="100" class="form-control" id="communication_score" name="communication_score" value="{{ form_data.get('communication_score', student.communication_score if student else 75) }}" required>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="internship_experience" class="form-label fw-semibold">Internships Completed</label>
+                            <input type="number" min="0" class="form-control" id="internship_experience" name="internship_experience" value="{{ form_data.get('internship_experience', student.internship_experience if student else 0) }}" required>
+                        </div>
+                        <div class="col-12">
+                            <label for="skills" class="form-label fw-semibold">Key Technical Skills</label>
+                            <textarea class="form-control" id="skills" name="skills" rows="2" placeholder="e.g. Python, SQL, Machine Learning, Flask, Data Structures">{{ form_data.get('skills', student.skills if student else '') }}</textarea>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-end gap-2 border-top pt-4">
+                        <a href="{{ url_for('students.index') }}" class="btn btn-light px-4">Cancel</a>
+                        <button type="submit" class="btn btn-primary px-4">
+                            <i class="bi bi-check-lg me-1"></i>{% if student %}Save Changes{% else %}Enroll Student{% endif %}
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

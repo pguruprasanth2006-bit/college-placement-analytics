@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block title %}{% if company %}Edit Company{% else %}Add Company{% endif %} - PlacementHub{% endblock %}
+{% block page_title %}{% if company %}Edit Recruitment Criteria{% else %}Register Recruiting Company{% endif %}{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="card border-0 shadow-sm rounded-3">
+            <div class="card-header bg-white border-bottom py-3 d-flex justify-content-between align-items-center">
+                <h5 class="mb-0 fw-bold">
+                    <i class="bi bi-building-gear text-primary me-2"></i>
+                    {% if company %}Update Company Drive: {{ company.company_name }}{% else %}New Recruitment Drive Details{% endif %}
+                </h5>
+                <a href="{{ url_for('companies.index') }}" class="btn btn-outline-secondary btn-sm">
+                    <i class="bi bi-arrow-left me-1"></i>Back to Companies
+                </a>
+            </div>
+
+            <div class="card-body p-4">
+                <form method="POST" action="{% if company %}{{ url_for('companies.edit', company_id=company.id) }}{% else %}{{ url_for('companies.add') }}{% endif %}">
+                    <div class="row g-3 mb-3">
+                        <div class="col-md-6">
+                            <label for="company_name" class="form-label fw-semibold">Company Name <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="company_name" name="company_name" value="{{ form_data.get('company_name', company.company_name if company else '') }}" required placeholder="e.g. Google, Amazon, Zoho">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="job_role" class="form-label fw-semibold">Designation / Job Role <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="job_role" name="job_role" value="{{ form_data.get('job_role', company.job_role if company else '') }}" required placeholder="e.g. Software Engineer, SDE-1">
+                        </div>
+                    </div>
+
+                    <div class="row g-3 mb-3">
+                        <div class="col-md-4">
+                            <label for="package" class="form-label fw-semibold">Salary Package (LPA) <span class="text-danger">*</span></label>
+                            <div class="input-group">
+                                <input type="number" step="0.1" min="0" class="form-control" id="package" name="package" value="{{ form_data.get('package', company.package if company else '') }}" required placeholder="e.g. 12.5">
+                                <span class="input-group-text">LPA</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="minimum_cgpa" class="form-label fw-semibold">Minimum Required CGPA <span class="text-danger">*</span></label>
+                            <input type="number" step="0.1" min="0" max="10" class="form-control" id="minimum_cgpa" name="minimum_cgpa" value="{{ form_data.get('minimum_cgpa', company.minimum_cgpa if company else 6.5) }}" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="maximum_arrears" class="form-label fw-semibold">Max Allowed Arrears</label>
+                            <input type="number" min="0" class="form-control" id="maximum_arrears" name="maximum_arrears" value="{{ form_data.get('maximum_arrears', company.maximum_arrears if company else 0) }}" required>
+                        </div>
+                    </div>
+
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-6">
+                            <label for="graduation_year" class="form-label fw-semibold">Target Graduation Year <span class="text-danger">*</span></label>
+                            <input type="number" min="2000" max="2040" class="form-control" id="graduation_year" name="graduation_year" value="{{ form_data.get('graduation_year', company.graduation_year if company else 2025) }}" required>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label fw-semibold">Eligible Academic Departments <span class="text-danger">*</span></label>
+                            <div class="border rounded-3 p-3 bg-light">
+                                {% set selected_dept_ids = [] %}
+                                {% if company %}
+                                    {% set selected_dept_ids = company.eligible_departments | map(attribute='id') | list %}
+                                {% endif %}
+                                <div class="row g-2">
+                                    {% for d in departments %}
+                                    <div class="col-md-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="department_ids" value="{{ d.id }}" id="dept_{{ d.id }}"
+                                                {% if d.id in selected_dept_ids or (form_data.getlist('department_ids') and d.id|string in form_data.getlist('department_ids')) %}checked{% endif %}>
+                                            <label class="form-check-label" for="dept_{{ d.id }}">
+                                                <strong>{{ d.department_code }}</strong> - {{ d.department_name }}
+                                            </label>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-end gap-2 border-top pt-3">
+                        <a href="{{ url_for('companies.index') }}" class="btn btn-light px-4">Cancel</a>
+                        <button type="submit" class="btn btn-primary px-4">
+                            <i class="bi bi-check-lg me-1"></i>{% if company %}Save Changes{% else %}Create Drive{% endif %}
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

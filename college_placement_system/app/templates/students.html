@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+
+{% block title %}Students Management - PlacementHub{% endblock %}
+{% block page_title %}Student Directory{% endblock %}
+
+{% block content %}
+<!-- Action and Filter Bar -->
+<div class="card border-0 shadow-sm p-3 mb-4 rounded-3">
+    <div class="row g-2 align-items-center">
+        <!-- Search and Filter Form -->
+        <div class="col-lg-9">
+            <form method="GET" action="{{ url_for('students.index') }}" class="row g-2">
+                <div class="col-md-5">
+                    <div class="input-group">
+                        <span class="input-group-text bg-light border-end-0"><i class="bi bi-search"></i></span>
+                        <input type="text" name="q" value="{{ search_query }}" class="form-control bg-light border-start-0" placeholder="Search by name, register no, email...">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <select name="department_id" class="form-select bg-light">
+                        <option value="">All Departments</option>
+                        {% for d in departments %}
+                            <option value="{{ d.id }}" {% if selected_dept == d.id %}selected{% endif %}>{{ d.department_code }} - {{ d.department_name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <select name="graduation_year" class="form-select bg-light">
+                        <option value="">All Years</option>
+                        {% for y in grad_years %}
+                            <option value="{{ y }}" {% if selected_year == y %}selected{% endif %}>{{ y }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-md-2 d-flex gap-1">
+                    <button type="submit" class="btn btn-primary w-100"><i class="bi bi-funnel me-1"></i>Filter</button>
+                    {% if search_query or selected_dept or selected_year %}
+                        <a href="{{ url_for('students.index') }}" class="btn btn-outline-secondary" title="Clear Filters"><i class="bi bi-x-lg"></i></a>
+                    {% endif %}
+                </div>
+            </form>
+        </div>
+
+        <!-- Add Student CTA -->
+        <div class="col-lg-3 text-lg-end">
+            <a href="{{ url_for('students.add') }}" class="btn btn-success px-3 shadow-sm">
+                <i class="bi bi-person-plus-fill me-1"></i>Add New Student
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Student Directory Table -->
+<div class="dashboard-card">
+    <div class="table-responsive">
+        <table class="table custom-table table-hover align-middle mb-0">
+            <thead>
+                <tr>
+                    <th>Reg. Number</th>
+                    <th>Full Name</th>
+                    <th>Department</th>
+                    <th>CGPA</th>
+                    <th>Arrears</th>
+                    <th>Grad Year</th>
+                    <th>Placement Status</th>
+                    <th class="text-end">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if students %}
+                    {% for s in students %}
+                    <tr>
+                        <td><code>{{ s.register_number }}</code></td>
+                        <td>
+                            <div class="fw-semibold text-dark">{{ s.name }}</div>
+                            <small class="text-muted">{{ s.email }}</small>
+                        </td>
+                        <td><span class="badge bg-light text-dark border">{{ s.department.department_code if s.department else '-' }}</span></td>
+                        <td><span class="fw-bold {% if s.cgpa >= 8.0 %}text-success{% elif s.cgpa >= 6.5 %}text-primary{% else %}text-danger{% endif %}">{{ s.cgpa }}</span></td>
+                        <td>
+                            {% if s.arrears == 0 %}
+                                <span class="badge bg-success-subtle text-success">0</span>
+                            {% else %}
+                                <span class="badge bg-danger-subtle text-danger">{{ s.arrears }}</span>
+                            {% endif %}
+                        </td>
+                        <td>{{ s.graduation_year }}</td>
+                        <td>
+                            {% if s.is_placed %}
+                                <span class="badge badge-placed"><i class="bi bi-check2-circle me-1"></i>Placed</span>
+                            {% else %}
+                                <span class="badge badge-unplaced">Unplaced</span>
+                            {% endif %}
+                        </td>
+                        <td class="text-end">
+                            <div class="btn-group btn-group-sm">
+                                <a href="{{ url_for('students.view', student_id=s.id) }}" class="btn btn-outline-info" title="View Profile">
+                                    <i class="bi bi-eye"></i>
+                                </a>
+                                <a href="{{ url_for('prediction.index', student_id=s.id) }}" class="btn btn-outline-primary" title="Predict Placement">
+                                    <i class="bi bi-cpu"></i>
+                                </a>
+                                <a href="{{ url_for('students.edit', student_id=s.id) }}" class="btn btn-outline-secondary" title="Edit">
+                                    <i class="bi bi-pencil"></i>
+                                </a>
+                                <form method="POST" action="{{ url_for('students.delete', student_id=s.id) }}" class="d-inline" onsubmit="return confirm('Are you sure you want to delete student {{ s.name }} ({{ s.register_number }})?');">
+                                    <button type="submit" class="btn btn-outline-danger" title="Delete">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td colspan="8" class="text-center py-5 text-muted">
+                            <i class="bi bi-inbox fs-1 d-block mb-2"></i>
+                            No students match the selected criteria.
+                        </td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Pagination -->
+    {% if pagination and pagination.pages > 1 %}
+    <div class="card-footer bg-white border-0 py-3">
+        <nav aria-label="Student directory pagination">
+            <ul class="pagination justify-content-center mb-0">
+                <li class="page-item {% if not pagination.has_prev %}disabled{% endif %}">
+                    <a class="page-link" href="{{ url_for('students.index', page=pagination.prev_num, q=search_query, department_id=selected_dept, graduation_year=selected_year) }}">Previous</a>
+                </li>
+                {% for p in pagination.iter_pages(left_edge=2, left_current=2, right_current=2, right_edge=2) %}
+                    {% if p %}
+                        <li class="page-item {% if p == pagination.page %}active{% endif %}">
+                            <a class="page-link" href="{{ url_for('students.index', page=p, q=search_query, department_id=selected_dept, graduation_year=selected_year) }}">{{ p }}</a>
+                        </li>
+                    {% else %}
+                        <li class="page-item disabled"><span class="page-link">…</span></li>
+                    {% endif %}
+                {% endfor %}
+                <li class="page-item {% if not pagination.has_next %}disabled{% endif %}">
+                    <a class="page-link" href="{{ url_for('students.index', page=pagination.next_num, q=search_query, department_id=selected_dept, graduation_year=selected_year) }}">Next</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
+

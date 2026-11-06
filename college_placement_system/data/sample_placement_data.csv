@@ -1,0 +1,301 @@
+register_number,name,email,phone,department,cgpa,arrears,graduation_year,aptitude_score,technical_score,communication_score,internship_experience,skills,placement_status,company_name,job_role,salary,placement_date
+REG2023IT1000,Abhishek Bachchan 1,student_1@college.edu,9816852902,Information Technology,9.9,2,2023,88,61,91,2,"Java, Spring Boot, MySQL",Not Placed,,,0.0,
+REG2025MECH1001,Sneha Reddy 2,student_2@college.edu,9862762640,Mechanical Engineering,7.67,0,2025,62,89,87,1,"AutoCAD, SolidWorks, MATLAB",Placed,Zoho,Member Technical Staff,8.59,2025-03-26
+REG2024MECH1002,Janani Ramesh 3,student_3@college.edu,9882225798,Mechanical Engineering,7.62,3,2024,59,45,55,2,"Java, Spring Boot, MySQL",Not Placed,,,0.0,
+REG2025EEE1003,Deepa Krishnan 4,student_4@college.edu,9843522480,Electrical and Electronics Engineering,7.57,0,2025,57,99,75,2,"AutoCAD, SolidWorks, MATLAB",Placed,Zoho,Member Technical Staff,9.16,2025-03-26
+REG2024CSE1004,Nisha Agarwal 5,student_5@college.edu,9868235050,Computer Science and Engineering,7.82,2,2024,57,53,73,0,"Python, SQL, Machine Learning",Not Placed,,,0.0,
+REG2026IT1005,Abhishek Bachchan 6,student_6@college.edu,9882999162,Information Technology,7.44,1,2026,70,66,79,1,"Cloud, AWS, Python, Docker",Not Placed,,,0.0,
+REG2024EEE1006,Meera Nambiar 7,student_7@college.edu,9818027522,Electrical and Electronics Engineering,6.97,1,2024,44,80,72,1,"AutoCAD, SolidWorks, MATLAB",Placed,TCS,Systems Engineer,4.24,2024-03-25
+REG2024CSE1007,Pooja Hegde 8,student_8@college.edu,9852858520,Computer Science and Engineering,7.0,1,2024,68,87,62,2,"Embedded C, IoT, Microcontrollers",Placed,TCS,Systems Engineer,4.1,2024-03-10
+REG2026CSE1008,Gautam Singhania 9,student_9@college.edu,9848175224,Computer Science and Engineering,7.56,1,2026,67,93,70,0,"Embedded C, IoT, Microcontrollers",Placed,LTI Mindtree,Graduate Trainee,4.81,2026-03-21
+REG2024IT1009,Gautam Singhania 10,student_10@college.edu,9828291317,Information Technology,7.0,0,2024,75,82,62,1,"Python, SQL, Machine Learning",Not Placed,,,0.0,
+REG2023MECH1010,Rahul Dravid 11,student_11@college.edu,9811406150,Mechanical Engineering,6.82,0,2023,69,78,80,1,"Embedded C, IoT, Microcontrollers",Not Placed,,,0.0,
+REG2023ECE1011,Vikram Prabhu 12,student_12@college.edu,9855362588,Electronics and Communication Engineering,7.72,0,2023,90,80,75,0,"C++, Data Structures, Algorithms",Placed,Accenture,Associate Software Engineer,5.28,2023-03-22
+REG2025IT1012,Aishwarya Rai 13,student_13@college.edu,9876977550,Information Technology,7.32,2,2025,62,67,91,0,"C++, Data Structures, Algorithms",Not Placed,,,0.0,
+REG2025CSE1013,Rahul Dravid 14,student_14@college.edu,9867413770,Computer Science and Engineering,9.25,0,2025,81,80,83,1,"Cloud, AWS, Python, Docker",Placed,Amazon,SDE-1,18.58,2025-03-17
+REG2025ECE1014,Akash Patel 15,student_15@college.edu,9876607761,Electronics and Communication Engineering,5.0,1,2025,48,30,51,1,"C++, Data Structures, Algorithms",Not Placed,,,0.0,
+REG2023MECH1015,Pranav Anand 16,student_16@college.edu,9878602415,Mechanical Engineering,8.8,0,2023,89,83,66,0,"Java, Spring Boot, MySQL",Placed,Zoho,Member Technical Staff,8.06,2023-03-15
+REG2023CSE1016,Aditi Rao 17,student_17@college.edu,9871868747,Computer Science and Engineering,8.97,0,2023,84,82,64,1,"AutoCAD, SolidWorks, MATLAB",Placed,Google,Software Engineer,22.61,2023-03-24
+REG2023IT1017,Rahul Dravid 18,student_18@college.edu,9827457883,Information Technology,5.32,0,2023,55,42,44,1,"Web Development, JavaScript, React, Node.js",Placed,TCS,Systems Engineer,4.77,2023-03-27
+REG2024EEE1018,Suresh Raina 19,student_19@college.edu,9812014017,Electrical and Electronics Engineering,7.22,0,2024,61,77,74,1,"Cloud, AWS, Python, Docker",Placed,TCS,Systems Engineer,4.78,2024-03-19
+REG2024ECE1019,Zara Khan 20,student_20@college.edu,9847203676,Electronics and Communication Engineering,7.19,0,2024,62,80,76,0,"C++, Data Structures, Algorithms",Not Placed,,,0.0,
+REG2024ECE1020,Aditi Rao 21,student_21@college.edu,9815846866,Electronics and Communication Engineering,6.05,0,2024,44,57,48,2,"C++, Data Structures, Algorithms",Placed,Wipro,Project Engineer,4.19,2024-03-17
+REG2024ECE1021,Nisha Agarwal 22,student_22@college.edu,9836687546,Electronics and Communication Engineering,6.74,0,2024,87,83,77,0,"AutoCAD, SolidWorks, MATLAB",Placed,Wipro,Project Engineer,3.66,2024-03-20
+REG2026IT1022,Uma Shankar 23,student_23@college.edu,9812059385,Information Technology,6.38,0,2026,48,43,61,1,"AutoCAD, SolidWorks, MATLAB",Not Placed,,,0.0,
+REG2024CSE1023,Harini Sundaram 24,student_24@college.edu,9845921754,Computer Science and Engineering,9.53,0,2024,80,88,87,0,"Embedded C, IoT, Microcontrollers",Placed,Microsoft,Cloud Engineer,19.75,2024-03-26
+REG2024EEE1024,Pranav Anand 25,student_25@college.edu,9832821211,Electrical and Electronics Engineering,8.63,0,2024,72,71,96,0,"AutoCAD, SolidWorks, MATLAB",Placed,LTI Mindtree,Graduate Trainee,4.64,2024-03-24
+REG2025EEE1025,Rithika Sen 26,student_26@college.edu,9884765359,Electrical and Electronics Engineering,9.0,1,2025,90,53,91,1,"Python, SQL, Machine Learning",Not Placed,,,0.0,
+REG2024EEE1026,Sai Pallavi 27,student_27@college.edu,9889521699,Electrical and Electronics Engineering,8.39,0,2024,76,78,76,0,"Python, SQL, Machine Learning",Placed,Infosys,Specialist Programmer,4.82,2024-03-25
+REG2025MECH1027,Sanjay Dutt 28,student_28@college.edu,9817503276,Mechanical Engineering,6.36,0,2025,78,57,57,2,"Embedded C, IoT, Microcontrollers",Placed,Cognizant,Programmer Analyst,4.72,2025-03-26
+REG2026IT1028,Karthik Raja 29,student_29@college.edu,9872827874,Information Technology,7.02,0,2026,60,86,49,0,"Cloud, AWS, Python, Docker",Not Placed,,,0.0,
+REG2026IT1029,Janani Ramesh 30,student_30@college.edu,9894792530,Information Technology,8.14,0,2026,80,85,70,1,"Web Development, JavaScript, React, Node.js",Placed,Zoho,Member Technical Staff,8.58,2026-03-18
+REG2023ECE1030,Akash Patel 31,student_31@college.edu,9823798270,Electronics and Communication Engineering,6.26,0,2023,52,43,63,0,"Web Development, JavaScript, React, Node.js",Not Placed,,,0.0,
+REG2026ECE1031,Yash Gowda 32,student_32@college.edu,9877667845,Electronics and Communication Engineering,8.38,0,2026,99,99,68,0,"Cloud, AWS, Python, Docker",Not Placed,,,0.0,
+REG2024ECE1032,Chetan Kumar 33,student_33@college.edu,9820431929,Electronics and Communication Engineering,7.34,0,2024,56,85,71,0,"Python, SQL, Machine Learning",Placed,Cognizant,Programmer Analyst,4.61,2024-03-13
+REG2024ECE1033,Nisha Agarwal 34,student_34@college.edu,9847945833,Electronics and Communication Engineering,7.19,0,2024,73,75,72,1,"Cloud, AWS, Python, Docker",Placed,TCS,Systems Engineer,4.25,2024-03-19
+REG2024EEE1034,Dinesh Karthik 35,student_35@college.edu,9832210217,Electrical and Electronics Engineering,8.38,0,2024,87,76,76,1,"Cloud, AWS, Python, Docker",Placed,Zoho,Member Technical Staff,9.07,2024-03-25
+REG2026CSE1035,Abhishek Bachchan 36,student_36@college.edu,9873368711,Computer Science and Engineering,8.09,2,2026,72,50,70,1,"C++, Data Structures, Algorithms",Not Placed,,,0.0,
+REG2024IT1036,Manoj Bajpayee 37,student_37@college.edu,9835861356,Information Technology,7.2,1,2024,62,56,73,1,"C++, Data Structures, Algorithms",Placed,Wipro,Project Engineer,3.74,2024-03-21
+REG2024CSE1037,Ananya Iyer 38,student_38@college.edu,9834027785,Computer Science and Engineering,8.88,0,2024,81,99,86,1,"Web Development, JavaScript, React, Node.js",Placed,Microsoft,Cloud Engineer,18.78,2024-03-26
+REG2025IT1038,Rithika Sen 39,student_39@college.edu,9847177857,Information Technology,6.41,0,2025,64,85,56,0,"Java, Spring Boot, MySQL",Placed,Cognizant,Programmer Analyst,4.93,2025-03-27
+REG2023CSE1039,Ishaan Verma 40,student_40@college.edu,9874387807,Computer Science and Engineering,8.28,0,2023,76,99,92,1,"Python, SQL, Machine Learning",Placed,LTI Mindtree,Graduate Trainee,5.32,2023-03-24
+REG2023IT1040,Dinesh Karthik 41,student_41@college.edu,9860516162,Information Technology,8.25,0,2023,90,71,77,3,"Embedded C, IoT, Microcontrollers",Placed,Accenture,Associate Software Engineer,4.95,2023-03-10
+REG2023IT1041,Rohit Sundar 42,student_42@college.edu,9893802796,Information Technology,7.26,4,2023,77,30,72,1,"Web Development, JavaScript, React, Node.js",Not Placed,,,0.0,
+REG2023CSE1042,Aditi Rao 43,student_43@college.edu,9840670201,Computer Science and Engineering,7.96,0,2023,69,77,83,1,"Embedded C, IoT, Microcontrollers",Placed,Zoho,Member Technical Staff,8.98,2023-03-16
+REG2023IT1043,Naveen Kumar 44,student_44@college.edu,9872856981,Information Technology,6.22,0,2023,45,32,68,0,"Java, Spring Boot, MySQL",Not Placed,,,0.0,
+REG2023CSE1044,Sanjay Dutt 45,student_45@college.edu,9834562662,Computer Science and Engineering,8.62,0,2023,80,86,89,2,"Cloud, AWS, Python, Docker",Placed,Accenture,Associate Software Engineer,5.23,2023-03-15
+REG2025CSE1045,Chetan Kumar 46,student_46@college.edu,9833443415,Computer Science and Engineering,7.4,1,2025,97,61,75,2,"Web Development, JavaScript, React, Node.js",Not Placed,,,0.0,
+REG2023EEE1046,Deepa Krishnan 47,student_47@college.edu,9859172324,Electrical and Electronics Engineering,7.03,0,2023,59,59,64,1,"Web Development, JavaScript, React, Node.js",Not Placed,,,0.0,
+REG2024IT1047,Vidya Balan 48,student_48@college.edu,9851130558,Information Technology,8.75,0,2024,99,60,84,3,"Embedded C, IoT, Microcontrollers",Placed,Infosys,Specialist Programmer,4.62,2024-03-12
+REG2026CSE1048,Ishaan Verma 49,student_49@college.edu,9860796110,Computer Science and Engineering,6.83,0,2026,87,70,58,0,"Cloud, AWS, Python, Docker",Placed,Wipro,Project Engineer,4.1,2026-03-15
+REG2024IT1049,Kavya Madhavan 50,student_50@college.edu,9868261869,Information Technology,6.05,0,2024,54,48,65,0,"C++, Data Structures, Algorithms",Not Placed,,,0.0,
+REG2025ECE1050,Vikram Prabhu 51,student_51@college.edu,9870993015,Electronics and Communication Engineering,5.89,0,2025,66,38,63,2,"AutoCAD, SolidWorks, MATLAB",Placed,TCS,Systems Engineer,3.95,2025-03-22
+REG2023CSE1051,Aishwarya Rai 52,student_52@college.edu,9865472357,Computer Science and Engineering,8.27,0,2023,98,37,76,2,"Java, Spring Boot, MySQL",Placed,Infosys,Specialist Programmer,5.12,2023-03-10
+REG2023ECE1052,Ananya Iyer 53,student_53@college.edu,9870998837,Electronics and Communication Engineering,6.19,0,2023,57,57,64,0,"Cloud, AWS, Python, Docker",Not Placed,,,0.0,
+REG2023CSE1053,Aditi Rao 54,student_54@college.edu,9830426495,Computer Science and Engineering,9.53,0,2023,86,99,66,0,"Embedded C, IoT, Microcontrollers",Placed,Zoho,Member Technical Staff,9.24,2023-03-21
+REG2023CSE1054,Bhavna Nair 55,student_55@college.edu,9870727594,Computer Science and Engineering,5.31,0,2023,47,71,54,0,"Cloud, AWS, Python, Docker",Not Placed,,,0.0,
+REG2024IT1055,Ananya Iyer 56,student_56@college.edu,9896320218,Information Technology,9.47,0,2024,76,83,86,0,"Cloud, AWS, Python, Docker",Placed,Amazon,SDE-1,18.01,2024-03-12
+REG2023IT1056,Sneha Reddy 57,student_57@college.edu,9847204318,Information Technology,7.83,0,2023,67,65,77,2,"AutoCAD, SolidWorks, MATLAB",Placed,LTI Mindtree,Graduate Trainee,5.12,2023-03-26
+REG2023ECE1057,Manoj Bajpayee 58,student_58@college.edu,9881772618,Electronics and Communication Engineering,7.49,0,2023,57,76,63,1,"C++, Data Structures, Algorithms",Placed,TCS,Systems Engineer,4.48,2023-03-20
+REG2023ECE1058,Rohit Sundar 59,student_59@college.edu,9868834845,Electronics and Communication Engineering,7.0,1,2023,63,45,83,0,"AutoCAD, SolidWorks, MATLAB",Not Placed,,,0.0,
+REG2024MECH1059,Varun Dhawan 60,student_60@college.edu,9886116475,Mechanical Engineering,8.04,0,2024,67,80,68,1,"Cloud, AWS, Python, Docker",Placed,Accenture,Associate Software Engineer,4.02,2024-03-23
+REG2023IT1060,Divya Menon 61,student_61@college.edu,9854467095,Information Technology,7.56,0,2023,75,81,83,0,"Java, Spring Boot, MySQL",Placed,Zoho,Member Technical Staff,9.14,2023-03-24
+REG2024CSE1061,Vikram Prabhu 62,student_62@college.edu,9859975039,Computer Science and Engineering,8.81,0,2024,64,99,85,0,"C++, Data Structures, Algorithms",Placed,Amazon,SDE-1,18.85,2024-03-25
+REG2024ECE1062,Ishaan Verma 63,student_63@college.edu,9846786884,Electronics and Communication Engineering,7.73,0,2024,78,71,68,1,"Cloud, AWS, Python, Docker",Placed,Zoho,Member Technical Staff,8.88,2024-03-13
+REG2025CSE1063,Swetha Mohan 64,student_64@college.edu,9867218588,Computer Science and Engineering,7.77,1,2025,79,64,92,3,"AutoCAD, SolidWorks, MATLAB",Placed,Accenture,Associate Software Engineer,4.66,2025-03-19
+REG2023IT1064,Janani Ramesh 65,student_65@college.edu,9867705020,Information Technology,7.2,0,2023,46,55,59,2,"C++, Data Structures, Algorithms",Placed,TCS,Systems Engineer,3.64,2023-03-20
+REG2025CSE1065,Deepa Krishnan 66,student_66@college.edu,9844671806,Computer Science and Engineering,7.54,3,2025,62,41,82,0,"C++, Data Structures, Algorithms",Not Placed,,,0.0,
+REG2025CSE1066,Ishaan Verma 67,student_67@college.edu,9812298756,Computer Science and Engineering,7.94,0,2025,90,71,86,2,"C++, Data Structures, Algorithms",Placed,Zoho,Member Technical Staff,9.47,2025-03-13
+REG2023MECH1067,Pooja Hegde 68,student_68@college.edu,9884282741,Mechanical Engineering,5.72,0,2023,43,57,56,2,"Python, SQL, Machine Learning",Placed,Wipro,Project Engineer,4.17,2023-03-23
+REG2026EEE1068,Aishwarya Rai 69,student_69@college.edu,9860254111,Electrical and Electronics Engineering,6.12,1,2026,76,63,79,2,"C++, Data Structures, Algorithms",Not Placed,,,0.0,
+REG2026ECE1069,Nisha Agarwal 70,student_70@college.edu,9897324860,Electronics and Communication Engineering,8.42,2,2026,74,56,76,1,"Java, Spring Boot, MySQL",Not Placed,,,0.0,
+REG2023IT1070,Karthik Raja 71,student_71@college.edu,9890235674,Information Technology,7.79,1,2023,61,88,78,1,"AutoCAD, SolidWorks, MATLAB",Placed,Infosys,Specialist Programmer,4.56,2023-03-20
+REG2024CSE1071,Manoj Bajpayee 72,student_72@college.edu,9857704340,Computer Science and Engineering,7.4,1,2024,66,59,75,0,"Web Development, JavaScript, React, Node.js",Not Placed,,,0.0,
+REG2025CSE1072,Rahul Dravid 73,student_73@college.edu,9811543812,Computer Science and Engineering,7.62,0,2025,80,71,72,0,"AutoCAD, SolidWorks, MATLAB",Not Placed,,,0.0,
+REG2025CSE1073,Rohit Sundar 74,student_74@college.edu,9824534056,Computer Science and Engineering,7.98,1,2025,72,58,84,0,"C++, Data Structures, Algorithms",Not Placed,,,0.0,
+REG2023IT1074,Rithika Sen 75,student_75@college.edu,9851385470,Information Technology,7.01,0,2023,75,31,78,0,"Python, SQL, Machine Learning",Not Placed,,,0.0,
+REG2023ECE1075,Sneha Reddy 76,student_76@college.edu,9841356085,Electronics and Communication Engineering,6.74,2,2023,45,63,51,1,"Java, Spring Boot, MySQL",Not Placed,,,0.0,
+REG2024ECE1076,Janani Ramesh 77,student_77@college.edu,9856988351,Electronics and Communication Engineering,7.82,0,2024,77,84,88,1,"AutoCAD, SolidWorks, MATLAB",Placed,LTI Mindtree,Graduate Trainee,5.12,2024-03-17
+REG2024CSE1077,Aarav Sharma 78,student_78@college.edu,9885759563,Computer Science and Engineering,6.52,1,2024,42,50,50,1,"Embedded C, IoT, Microcontrollers",Not Placed,,,0.0,
+REG2025MECH1078,Rithika Sen 79,student_79@college.edu,9885900629,Mechanical Engineering,8.05,0,2025,75,76,87,0,"Java, Spring Boot, MySQL",Placed,Accenture,Associate Software Engineer,4.68,2025-03-23
+REG2024ECE1079,Chetan Kumar 80,student_80@college.edu,9867889421,Electronics and Communication Engineering,5.73,0,2024,47,60,74,3,"Java, Spring Boot, MySQL",Placed,Wipro,Project Engineer,4.27,2024-03-20
+REG2024IT1080,Dinesh Karthik 81,student_81@college.edu,9879058766,Information Technology,8.73,0,2024,73,60,69,3,"Web Development, JavaScript, React, Node.js",Placed,LTI Mindtree,Graduate Trainee,5.7,2024-03-15
+REG2025ECE1081,Rahul Dravid 82,student_82@college.edu,9830122242,Electronics and Communication Engineering,8.12,1,2025,87,63,73,2,"Web Development, JavaScript, React, Node.js",Placed,LTI Mindtree,Graduate Trainee,5.93,2025-03-22
+REG2023IT1082,Aarav Sharma 83,student_83@college.edu,9853410212,Information Technology,7.88,0,2023,88,85,64,3,"Python, SQL, Machine Learning",Placed,Infosys,Specialist Programmer,4.96,2023-03-20
+REG2024CSE1083,Deepa Krishnan 84,student_84@college.edu,9814975467,Computer Science and Engineering,8.68,0,2024,89,64,78,1,"C++, Data Structures, Algorithms",Not Placed,,,0.0,
+REG2025IT1084,Rahul Dravid 85,student_85@college.edu,9899074837,Information Technology,9.43,0,2025,74,93,81,3,"Web Development, JavaScript, React, Node.js",Placed,Zoho,Member Technical Staff,8.1,2025-03-26
+REG2026ECE1085,Gautam Singhania 86,student_86@college.edu,9866251007,Electronics and Communication Engineering,8.72,0,2026,78,63,88,0,"Web Development, JavaScript, React, Node.js",Placed,LTI Mindtree,Graduate Trainee,4.87,2026-03-23
+REG2024CSE1086,Kavya Madhavan 87,student_87@college.edu,9822006205,Computer Science and Engineering,5.58,2,2024,61,45,75,1,"C++, Data Structures, Algorithms",Not Placed,,,0.0,
+REG2024CSE1087,Deepa Krishnan 88,student_88@college.edu,9816767567,Computer Science and Engineering,6.19,0,2024,63,56,79,0,"Cloud, AWS, Python, Docker",Not Placed,,,0.0,
+REG2023CSE1088,Vidya Balan 89,student_89@college.edu,9841941562,Computer Science and Engineering,6.91,3,2023,80,30,64,0,"AutoCAD, SolidWorks, MATLAB",Not Placed,,,0.0,
+REG2024CSE1089,Vidya Balan 90,student_90@college.edu,9849314351,Computer Science and Engineering,7.63,0,2024,78,88,72,0,"C++, Data Structures, Algorithms",Placed,Zoho,Member Technical Staff,9.2,2024-03-18
+REG2024EEE1090,Uma Shankar 91,student_91@college.edu,9866062130,Electrical and Electronics Engineering,8.17,0,2024,80,66,60,1,"Web Development, JavaScript, React, Node.js",Placed,Zoho,Member Technical Staff,9.35,2024-03-24
+REG2023ECE1091,Arjun Reddy 92,student_92@college.edu,9849898334,Electronics and Communication Engineering,6.8,1,2023,58,46,61,2,"AutoCAD, SolidWorks, MATLAB",Not Placed,,,0.0,
+REG2024IT1092,Abhishek Bachchan 93,student_93@college.edu,9824058702,Information Technology,7.81,0,2024,76,76,85,1,"AutoCAD, SolidWorks, MATLAB",Placed,Zoho,Member Technical Staff,8.09,2024-03-16
+REG2024CSE1093,Sanjay Dutt 94,student_94@college.edu,9838317302,Computer Science and Engineering,6.77,0,2024,64,79,85,0,"Web Development, JavaScript, React, Node.js",Placed,TCS,Systems Engineer,4.3,2024-03-19
+REG2023IT1094,Chetan Kumar 95,student_95@college.edu,9811998173,Information Technology,6.93,0,2023,76,50,57,2,"Cloud, AWS, Python, Docker",Placed,Cognizant,Programmer Analyst,4.53,2023-03-11
+REG2024IT1095,Dinesh Karthik 96,student_96@college.edu,9846657073,Information Technology,6.05,1,2024,67,50,58,1,"AutoCAD, SolidWorks, MATLAB",Not Placed,,,0.0,
+REG2023CSE1096,Deepa Krishnan 97,student_97@college.edu,9860973241,Computer Science and Engineering,6.58,0,2023,55,67,67,1,"Java, Spring Boot, MySQL",Placed,Cognizant,Programmer Analyst,4.4,2023-03-15
+REG2024IT1097,Harini Sundaram 98,student_98@college.edu,9830974295,Information Technology,6.11,4,2024,35,42,67,1,"Java, Spring Boot, MySQL",Not Placed,,,0.0,
+REG2023IT1098,Varun Dhawan 99,student_99@college.edu,9862919199,Information Technology,6.53,3,2023,35,45,59,0,"Web Development, JavaScript, React, Node.js",Not Placed,,,0.0,
+REG2026ECE1099,Uma Shankar 100,student_100@college.edu,9814109070,Electronics and Communication Engineering,8.76,0,2026,88,77,85,0,"Cloud, AWS, Python, Docker",Placed,LTI Mindtree,Graduate Trainee,5.96,2026-03-17
+REG2024ECE1100,Pooja Hegde 101,student_101@college.edu,9898826439,Electronics and Communication Engineering,6.56,0,2024,51,49,63,2,"Web Development, JavaScript, React, Node.js",Placed,Cognizant,Programmer Analyst,4.9,2024-03-23
+REG2025CSE1101,Rahul Dravid 102,student_102@college.edu,9833969983,Computer Science and Engineering,9.9,0,2025,65,95,87,0,"Cloud, AWS, Python, Docker",Not Placed,,,0.0,
+REG2025IT1102,Yash Gowda 103,student_103@college.edu,9869081565,Information Technology,8.14,0,2025,82,61,82,1,"Web Development, JavaScript, React, Node.js",Placed,Infosys,Specialist Programmer,4.38,2025-03-26
+REG2024ECE1103,Vidya Balan 104,student_104@college.edu,9852720675,Electronics and Communication Engineering,7.8,0,2024,99,32,75,2,"Cloud, AWS, Python, Docker",Placed,Zoho,Member Technical Staff,8.09,2024-03-14
+REG2023IT1104,Aishwarya Rai 105,student_105@college.edu,9869551513,Information Technology,6.66,0,2023,65,68,64,1,"Embedded C, IoT, Microcontrollers",Placed,Cognizant,Programmer Analyst,4.87,2023-03-15
+REG2024EEE1105,Pranav Anand 106,student_106@college.edu,9899803134,Electrical and Electronics Engineering,8.37,0,2024,89,91,77,0,"AutoCAD, SolidWorks, MATLAB",Not Placed,,,0.0,
+REG2024ECE1106,Sai Pallavi 107,student_107@college.edu,9896916566,Electronics and Communication Engineering,6.97,2,2024,59,30,69,0,"Embedded C, IoT, Microcontrollers",Not Placed,,,0.0,
+REG2025CSE1107,Vidya Balan 108,student_108@college.edu,9877808897,Computer Science and Engineering,7.73,1,2025,68,52,71,0,"AutoCAD, SolidWorks, MATLAB",Placed,Accenture,Associate Software Engineer,5.06,2025-03-23
+REG2024CSE1108,Aarav Sharma 109,student_109@college.edu,9862177348,Computer Science and Engineering,9.9,1,2024,97,97,85,1,"Embedded C, IoT, Microcontrollers",Placed,Infosys,Specialist Programmer,4.76,2024-03-23
+REG2023ECE1109,Vidya Balan 110,student_110@college.edu,9823490091,Electronics and Communication Engineering,7.49,0,2023,68,99,89,1,"Web Development, JavaScript, React, Node.js",Placed,Wipro,Project Engineer,4.41,2023-03-10
+REG2024CSE1110,Yash Gowda 111,student_111@college.edu,9876505438,Computer Science and Engineering,8.86,0,2024,86,84,87,0,"AutoCAD, SolidWorks, MATLAB",Placed,Amazon,SDE-1,19.23,2024-03-19
+REG2024IT1111,Ishaan Verma 112,student_112@college.edu,9812873524,Information Technology,6.83,0,2024,71,53,66,3,"Java, Spring Boot, MySQL",Placed,TCS,Systems Engineer,3.59,2024-03-25
+REG2025MECH1112,Akash Patel 113,student_113@college.edu,9878665873,Mechanical Engineering,7.56,4,2025,44,44,80,1,"C++, Data Structures, Algorithms",Not Placed,,,0.0,
+REG2024IT1113,Aarav Sharma 114,student_114@college.edu,9844152336,Information Technology,9.55,0,2024,99,99,82,0,"AutoCAD, SolidWorks, MATLAB",Placed,Amazon,SDE-1,18.47,2024-03-16
+REG2024IT1114,Arjun Reddy 115,student_115@college.edu,9810237068,Information Technology,6.91,2,2024,55,43,81,1,"Python, SQL, Machine Learning",Not Placed,,,0.0,
+REG2026ECE1115,Rohit Sundar 116,student_116@college.edu,9875113119,Electronics and Communication Engineering,9.59,0,2026,80,80,89,1,"Python, SQL, Machine Learning",Placed,Zoho,Member Technical Staff,8.56,2026-03-27
+REG2025IT1116,Ishaan Verma 117,student_117@college.edu,9819093964,Information Technology,8.38,0,2025,85,72,77,0,"Python, SQL, Machine Learning",Placed,Accenture,Associate Software Engineer,4.84,2025-03-15
+REG2023IT1117,Abhishek Bachchan 118,student_118@college.edu,9817870907,Information Technology,6.98,1,2023,52,45,74,0,"AutoCAD, SolidWorks, MATLAB",Not Placed,,,0.0,
+REG2023MECH1118,Sai Pallavi 119,student_119@college.edu,9878911330,Mechanical Engineering,8.3,0,2023,79,80,62,2,"Java, Spring Boot, MySQL",Placed,LTI Mindtree,Graduate Trainee,4.99,2023-03-13
+REG2023IT1119,Dinesh Karthik 120,student_120@college.edu,9852500282,Information Technology,8.67,2,2023,71,92,69,1,"Python, SQL, Machine Learning",Placed,Wipro,Project Engineer,4.45,2023-03-22
+REG2023MECH1120,Janani Ramesh 121,student_121@college.edu,9869892560,Mechanical Engineering,8.28,2,2023,81,70,66,1,"Python, SQL, Machine Learning",Not Placed,,,0.0,
+REG2023MECH1121,Janani Ramesh 122,student_122@college.edu,9892642148,Mechanical Engineering,5.87,0,2023,65,50,65,1,"Embedded C, IoT, Microcontrollers",Not Placed,,,0.0,
+REG2023CSE1122,Rohit Sundar 123,student_123@college.edu,9832451154,Computer Science and Engineering,6.8,0,2023,66,59,86,0,"Cloud, AWS, Python, Docker",Not Placed,,,0.0,
+REG2024CSE1123,Harsh Vardhan 124,student_124@college.edu,9882217592,Computer Science and Engineering,7.33,0,2024,80,46,94,0,"Web Development, JavaScript, React, Node.js",Placed,Wipro,Project Engineer,4.4,2024-03-13
+REG2023CSE1124,Tarun Vijay 125,student_125@college.edu,9816379515,Computer Science and Engineering,7.52,2,2023,79,71,80,1,"AutoCAD, SolidWorks, MATLAB",Placed,TCS,Systems Engineer,4.41,2023-03-15
+REG2026CSE1125,Abhishek Bachchan 126,student_126@college.edu,9838576958,Computer Science and Engineering,8.28,0,2026,85,77,83,0,"Embedded C, IoT, Microcontrollers",Not Placed,,,0.0,
+REG2023CSE1126,Tarun Vijay 127,student_127@college.edu,9857044727,Computer Science and Engineering,7.8,0,2023,75,70,57,0,"Web Development, JavaScript, React, Node.js",Not Placed,,,0.0,
+REG2024ECE1127,Ananya Iyer 128,student_128@college.edu,9848879284,Electronics and Communication Engineering,6.13,0,2024,45,99,59,2,"Embedded C, IoT, Microcontrollers",Not Placed,,,0.0,
+REG2024CSE1128,Suresh Raina 129,student_129@college.edu,9855143490,Computer Science and Engineering,8.02,1,2024,58,73,68,3,"Web Development, JavaScript, React, Node.js",Placed,Accenture,Associate Software Engineer,4.27,2024-03-11
+REG2026CSE1129,Yash Gowda 130,student_130@college.edu,9829145109,Computer Science and Engineering,8.27,0,2026,74,67,71,2,"Cloud, AWS, Python, Docker",Placed,Infosys,Specialist Programmer,5.45,2026-03-17
+REG2023EEE1130,Pooja Hegde 131,student_131@college.edu,9887314232,Electrical and Electronics Engineering,8.22,1,2023,65,65,76,2,"Embedded C, IoT, Microcontrollers",Placed,Infosys,Specialist Programmer,4.38,2023-03-19
+REG2024CSE1131,Abhishek Bachchan 132,student_132@college.edu,9891540863,Computer Science and Engineering,8.79,2,2024,70,87,76,0,"C++, Data Structures, Algorithms",Not Placed,,,0.0,
+REG2026EEE1132,Janani Ramesh 133,student_133@college.edu,9856015290,Electrical and Electronics Engineering,8.52,0,2026,81,82,59,3,"AutoCAD, SolidWorks, MATLAB",Placed,Zoho,Member Technical Staff,9.19,2026-03-18
+REG2026CSE1133,Sneha Reddy 134,student_134@college.edu,9821364638,Computer Science and Engineering,8.11,0,2026,83,56,84,0,"Embedded C, IoT, Microcontrollers",Placed,Zoho,Member Technical Staff,9.31,2026-03-16
+REG2025CSE1134,Vikram Prabhu 135,student_135@college.edu,9866896917,Computer Science and Engineering,7.52,3,2025,56,65,62,3,"Web Development, JavaScript, React, Node.js",Not Placed,,,0.0,
+REG2024ECE1135,Harsh Vardhan 136,student_136@college.edu,9812806284,Electronics and Communication Engineering,5.77,0,2024,64,43,65,3,"Cloud, AWS, Python, Docker",Placed,Cognizant,Programmer Analyst,4.6,2024-03-26
+REG2023ECE1136,Tarun Vijay 137,student_137@college.edu,9820002707,Electronics and Communication Engineering,8.07,2,2023,67,90,97,1,"Web Development, JavaScript, React, Node.js",Not Placed,,,0.0,
+REG2025EEE1137,Chetan Kumar 138,student_138@college.edu,9811141452,Electrical and Electronics Engineering,7.83,0,2025,51,88,66,3,"Python, SQL, Machine Learning",Placed,Infosys,Specialist Programmer,4.4,2025-03-10
+REG2026ECE1138,Pranav Anand 139,student_139@college.edu,9842080782,Electronics and Communication Engineering,7.9,0,2026,64,68,50,1,"Cloud, AWS, Python, Docker",Placed,Zoho,Member Technical Staff,8.44,2026-03-17
+REG2024EEE1139,Sanjay Dutt 140,student_140@college.edu,9872232561,Electrical and Electronics Engineering,6.2,2,2024,50,63,62,0,"C++, Data Structures, Algorithms",Not Placed,,,0.0,
+REG2024CSE1140,Aditi Rao 141,student_141@college.edu,9847834860,Computer Science and Engineering,6.41,0,2024,49,60,77,1,"AutoCAD, SolidWorks, MATLAB",Placed,Wipro,Project Engineer,4.01,2024-03-24
+REG2024CSE1141,Bhavna Nair 142,student_142@college.edu,9819382586,Computer Science and Engineering,8.76,0,2024,89,95,99,1,"Cloud, AWS, Python, Docker",Placed,Accenture,Associate Software Engineer,4.01,2024-03-25
+REG2025ECE1142,Sanjay Dutt 143,student_143@college.edu,9889522817,Electronics and Communication Engineering,7.56,0,2025,91,77,61,0,"Embedded C, IoT, Microcontrollers",Not Placed,,,0.0,
+REG2023EEE1143,Sanjay Dutt 144,student_144@college.edu,9865500286,Electrical and Electronics Engineering,8.35,0,2023,93,67,83,1,"Python, SQL, Machine Learning",Placed,Infosys,Specialist Programmer,5.5,2023-03-27
+REG2024MECH1144,Naveen Kumar 145,student_145@college.edu,9898570093,Mechanical Engineering,7.63,0,2024,70,62,69,3,"Embedded C, IoT, Microcontrollers",Placed,Infosys,Specialist Programmer,4.26,2024-03-25
+REG2024IT1145,Suresh Raina 146,student_146@college.edu,9855444007,Information Technology,7.63,0,2024,91,86,73,0,"C++, Data Structures, Algorithms",Placed,LTI Mindtree,Graduate Trainee,5.51,2024-03-19
+REG2024IT1146,Gautam Singhania 147,student_147@college.edu,9815478878,Information Technology,8.63,3,2024,68,59,99,2,"Cloud, AWS, Python, Docker",Placed,Cognizant,Programmer Analyst,4.64,2024-03-10
+REG2023ECE1147,Sanjay Dutt 148,student_148@college.edu,9849651128,Electronics and Communication Engineering,7.03,0,2023,64,60,55,2,"Web Development, JavaScript, React, Node.js",Placed,TCS,Systems Engineer,4.56,2023-03-10
+REG2023CSE1148,Rithika Sen 149,student_149@college.edu,9873382571,Computer Science and Engineering,7.71,0,2023,66,59,77,3,"C++, Data Structures, Algorithms",Placed,Accenture,Associate Software Engineer,4.67,2023-03-18
+REG2025MECH1149,Abhishek Bachchan 150,student_150@college.edu,9888874382,Mechanical Engineering,7.09,0,2025,65,72,75,3,"Web Development, JavaScript, React, Node.js",Placed,TCS,Systems Engineer,4.46,2025-03-17
+REG2024EEE1150,Uma Shankar 151,student_151@college.edu,9879224090,Electrical and Electronics Engineering,7.12,1,2024,59,89,82,1,"Embedded C, IoT, Microcontrollers",Placed,TCS,Systems Engineer,4.22,2024-03-19
+REG2024IT1151,Aarav Sharma 152,student_152@college.edu,9883416381,Information Technology,7.26,0,2024,72,53,73,3,"C++, Data Structures, Algorithms",Placed,Cognizant,Programmer Analyst,4.55,2024-03-26
+REG2023ECE1152,Sai Pallavi 153,student_153@college.edu,9888096799,Electronics and Communication Engineering,7.84,3,2023,62,56,78,2,"Java, Spring Boot, MySQL",Not Placed,,,0.0,
+REG2024ECE1153,Harsh Vardhan 154,student_154@college.edu,9864732500,Electronics and Communication Engineering,7.07,0,2024,69,85,67,0,"Cloud, AWS, Python, Docker",Placed,Cognizant,Programmer Analyst,5.09,2024-03-27
+REG2024CSE1154,Akash Patel 155,student_155@college.edu,9833835237,Computer Science and Engineering,8.98,0,2024,89,84,85,1,"Cloud, AWS, Python, Docker",Placed,Google,Software Engineer,22.74,2024-03-17
+REG2023MECH1155,Abhishek Bachchan 156,student_156@college.edu,9816662064,Mechanical Engineering,6.62,0,2023,79,68,64,1,"C++, Data Structures, Algorithms",Placed,Cognizant,Programmer Analyst,4.22,2023-03-26
+REG2024IT1156,Bhavna Nair 157,student_157@college.edu,9894634772,Information Technology,7.39,0,2024,83,54,79,0,"C++, Data Structures, Algorithms",Placed,Wipro,Project Engineer,4.1,2024-03-16
+REG2023EEE1157,Deepa Krishnan 158,student_158@college.edu,9876556571,Electrical and Electronics Engineering,7.12,0,2023,51,72,67,1,"C++, Data Structures, Algorithms",Placed,TCS,Systems Engineer,4.28,2023-03-15
+REG2023CSE1158,Sai Pallavi 159,student_159@college.edu,9871867035,Computer Science and Engineering,9.19,0,2023,55,84,87,1,"Java, Spring Boot, MySQL",Placed,Amazon,SDE-1,19.42,2023-03-13
+REG2026EEE1159,Dinesh Karthik 160,student_160@college.edu,9838618453,Electrical and Electronics Engineering,7.82,1,2026,81,81,75,0,"Java, Spring Boot, MySQL",Placed,Zoho,Member Technical Staff,8.42,2026-03-22
+REG2024IT1160,Yash Gowda 161,student_161@college.edu,9854171571,Information Technology,8.74,0,2024,66,99,92,1,"Java, Spring Boot, MySQL",Placed,LTI Mindtree,Graduate Trainee,5.31,2024-03-13
+REG2025CSE1161,Uma Shankar 162,student_162@college.edu,9866825938,Computer Science and Engineering,5.97,0,2025,57,91,63,2,"Java, Spring Boot, MySQL",Not Placed,,,0.0,
+REG2024MECH1162,Rahul Dravid 163,student_163@college.edu,9884110701,Mechanical Engineering,7.89,0,2024,61,82,58,1,"C++, Data Structures, Algorithms",Placed,LTI Mindtree,Graduate Trainee,4.89,2024-03-27
+REG2025CSE1163,Janani Ramesh 164,student_164@college.edu,9851888352,Computer Science and Engineering,8.58,1,2025,54,79,92,0,"AutoCAD, SolidWorks, MATLAB",Placed,LTI Mindtree,Graduate Trainee,4.78,2025-03-25
+REG2025CSE1164,Tarun Vijay 165,student_165@college.edu,9875771889,Computer Science and Engineering,7.69,0,2025,80,75,65,0,"Web Development, JavaScript, React, Node.js",Placed,Infosys,Specialist Programmer,4.09,2025-03-18
+REG2024MECH1165,Tarun Vijay 166,student_166@college.edu,9838093327,Mechanical Engineering,8.77,0,2024,91,78,74,1,"Web Development, JavaScript, React, Node.js",Placed,Accenture,Associate Software Engineer,4.23,2024-03-23
+REG2024MECH1166,Rahul Dravid 167,student_167@college.edu,9858442092,Mechanical Engineering,7.03,0,2024,61,70,64,2,"Python, SQL, Machine Learning",Placed,Cognizant,Programmer Analyst,4.45,2024-03-19
+REG2024IT1167,Harini Sundaram 168,student_168@college.edu,9815055769,Information Technology,9.15,1,2024,49,76,97,0,"Web Development, JavaScript, React, Node.js",Placed,LTI Mindtree,Graduate Trainee,4.91,2024-03-12
+REG2024ECE1168,Abhishek Bachchan 169,student_169@college.edu,9865906455,Electronics and Communication Engineering,9.9,0,2024,85,96,66,1,"Cloud, AWS, Python, Docker",Placed,Microsoft,Cloud Engineer,19.64,2024-03-25
+REG2026IT1169,Aditi Rao 170,student_170@college.edu,9822696688,Information Technology,7.2,0,2026,74,85,99,0,"AutoCAD, SolidWorks, MATLAB",Placed,Cognizant,Programmer Analyst,4.02,2026-03-21
+REG2025CSE1170,Akash Patel 171,student_171@college.edu,9831249305,Computer Science and Engineering,7.11,1,2025,46,46,81,0,"AutoCAD, SolidWorks, MATLAB",Not Placed,,,0.0,
+REG2026CSE1171,Yash Gowda 172,student_172@college.edu,9863182422,Computer Science and Engineering,9.2,1,2026,83,97,85,2,"AutoCAD, SolidWorks, MATLAB",Placed,Infosys,Specialist Programmer,5.34,2026-03-13
+REG2023ECE1172,Kavya Madhavan 173,student_173@college.edu,9815918806,Electronics and Communication Engineering,9.34,0,2023,87,99,83,1,"AutoCAD, SolidWorks, MATLAB",Placed,Zoho,Member Technical Staff,8.41,2023-03-11
+REG2025ECE1173,Aditi Rao 174,student_174@college.edu,9821685762,Electronics and Communication Engineering,7.02,2,2025,65,52,73,0,"Java, Spring Boot, MySQL",Not Placed,,,0.0,
+REG2026ECE1174,Aditi Rao 175,student_175@college.edu,9853151508,Electronics and Communication Engineering,7.14,0,2026,71,37,76,1,"Python, SQL, Machine Learning",Not Placed,,,0.0,
+REG2023ECE1175,Sanjay Dutt 176,student_176@college.edu,9893260243,Electronics and Communication Engineering,7.29,0,2023,59,59,78,0,"Python, SQL, Machine Learning",Not Placed,,,0.0,
+REG2023CSE1176,Pooja Hegde 177,student_177@college.edu,9852926707,Computer Science and Engineering,6.12,0,2023,75,74,70,1,"Embedded C, IoT, Microcontrollers",Not Placed,,,0.0,
+REG2025IT1177,Yash Gowda 178,student_178@college.edu,9883414100,Information Technology,6.59,0,2025,63,61,68,1,"Embedded C, IoT, Microcontrollers",Not Placed,,,0.0,
+REG2024CSE1178,Tarun Vijay 179,student_179@college.edu,9883304060,Computer Science and Engineering,6.5,0,2024,64,46,65,0,"Python, SQL, Machine Learning",Not Placed,,,0.0,
+REG2025IT1179,Uma Shankar 180,student_180@college.edu,9838756261,Information Technology,6.76,3,2025,40,38,67,0,"Cloud, AWS, Python, Docker",Not Placed,,,0.0,
+REG2023IT1180,Aarav Sharma 181,student_181@college.edu,9863256185,Information Technology,7.56,0,2023,67,82,71,1,"Java, Spring Boot, MySQL",Placed,Infosys,Specialist Programmer,4.89,2023-03-23
+REG2025EEE1181,Meera Nambiar 182,student_182@college.edu,9841087640,Electrical and Electronics Engineering,7.86,0,2025,64,81,86,2,"Cloud, AWS, Python, Docker",Placed,LTI Mindtree,Graduate Trainee,4.67,2025-03-14
+REG2023IT1182,Aditi Rao 183,student_183@college.edu,9858883781,Information Technology,9.31,0,2023,84,85,90,3,"Python, SQL, Machine Learning",Placed,Microsoft,Cloud Engineer,19.02,2023-03-24
+REG2023CSE1183,Rohit Sundar 184,student_184@college.edu,9875184214,Computer Science and Engineering,6.5,3,2023,70,37,40,0,"Web Development, JavaScript, React, Node.js",Not Placed,,,0.0,
+REG2023CSE1184,Tarun Vijay 185,student_185@college.edu,9891248346,Computer Science and Engineering,8.68,0,2023,65,76,87,2,"Java, Spring Boot, MySQL",Placed,Zoho,Member Technical Staff,9.23,2023-03-17
+REG2025ECE1185,Bhavna Nair 186,student_186@college.edu,9813352214,Electronics and Communication Engineering,7.36,0,2025,52,56,74,1,"C++, Data Structures, Algorithms",Placed,Wipro,Project Engineer,3.94,2025-03-26
+REG2025ECE1186,Tarun Vijay 187,student_187@college.edu,9896904519,Electronics and Communication Engineering,7.55,0,2025,90,93,73,1,"AutoCAD, SolidWorks, MATLAB",Placed,Accenture,Associate Software Engineer,5.2,2025-03-14
+REG2024CSE1187,Ananya Iyer 188,student_188@college.edu,9831419897,Computer Science and Engineering,8.34,0,2024,76,74,74,2,"Cloud, AWS, Python, Docker",Placed,Zoho,Member Technical Staff,8.7,2024-03-22
+REG2024CSE1188,Gautam Singhania 189,student_189@college.edu,9842320708,Computer Science and Engineering,6.37,4,2024,35,52,77,2,"Python, SQL, Machine Learning",Not Placed,,,0.0,
+REG2026ECE1189,Kavya Madhavan 190,student_190@college.edu,9898897082,Electronics and Communication Engineering,8.02,3,2026,74,78,86,3,"Java, Spring Boot, MySQL",Not Placed,,,0.0,
+REG2024CSE1190,Zara Khan 191,student_191@college.edu,9896400448,Computer Science and Engineering,7.78,0,2024,67,87,67,1,"Web Development, JavaScript, React, Node.js",Placed,Accenture,Associate Software Engineer,4.99,2024-03-21
+REG2025EEE1191,Rahul Dravid 192,student_192@college.edu,9850866635,Electrical and Electronics Engineering,8.14,3,2025,84,52,81,1,"AutoCAD, SolidWorks, MATLAB",Not Placed,,,0.0,
+REG2024ECE1192,Arjun Reddy 193,student_193@college.edu,9879895769,Electronics and Communication Engineering,7.92,0,2024,83,80,66,2,"Cloud, AWS, Python, Docker",Placed,Accenture,Associate Software Engineer,5.12,2024-03-18
+REG2024CSE1193,Varun Dhawan 194,student_194@college.edu,9812269798,Computer Science and Engineering,9.9,2,2024,75,82,74,0,"AutoCAD, SolidWorks, MATLAB",Not Placed,,,0.0,
+REG2024CSE1194,Bhavna Nair 195,student_195@college.edu,9813439289,Computer Science and Engineering,6.9,0,2024,93,51,63,1,"Cloud, AWS, Python, Docker",Not Placed,,,0.0,
+REG2024MECH1195,Pranav Anand 196,student_196@college.edu,9826186862,Mechanical Engineering,7.02,0,2024,61,70,79,1,"Java, Spring Boot, MySQL",Placed,Cognizant,Programmer Analyst,3.87,2024-03-21
+REG2025IT1196,Gautam Singhania 197,student_197@college.edu,9897741878,Information Technology,6.91,0,2025,76,48,79,1,"Embedded C, IoT, Microcontrollers",Placed,TCS,Systems Engineer,4.22,2025-03-10
+REG2024IT1197,Karthik Raja 198,student_198@college.edu,9865341816,Information Technology,6.99,0,2024,72,82,75,0,"AutoCAD, SolidWorks, MATLAB",Placed,Wipro,Project Engineer,3.64,2024-03-24
+REG2023EEE1198,Uma Shankar 199,student_199@college.edu,9845202256,Electrical and Electronics Engineering,6.9,0,2023,83,57,77,0,"Embedded C, IoT, Microcontrollers",Not Placed,,,0.0,
+REG2026MECH1199,Dinesh Karthik 200,student_200@college.edu,9846938405,Mechanical Engineering,8.91,0,2026,99,87,87,2,"C++, Data Structures, Algorithms",Placed,Google,Software Engineer,22.69,2026-03-24
+REG2024MECH1200,Bhavna Nair 201,student_201@college.edu,9898200976,Mechanical Engineering,9.16,0,2024,86,91,77,0,"Python, SQL, Machine Learning",Placed,Amazon,SDE-1,18.31,2024-03-26
+REG2024ECE1201,Karthik Raja 202,student_202@college.edu,9872640623,Electronics and Communication Engineering,6.97,1,2024,54,55,74,1,"Embedded C, IoT, Microcontrollers",Not Placed,,,0.0,
+REG2026IT1202,Sneha Reddy 203,student_203@college.edu,9838529068,Information Technology,6.68,0,2026,71,70,76,0,"Embedded C, IoT, Microcontrollers",Not Placed,,,0.0,
+REG2025CSE1203,Akash Patel 204,student_204@college.edu,9823693090,Computer Science and Engineering,8.12,0,2025,69,70,84,0,"Embedded C, IoT, Microcontrollers",Placed,Infosys,Specialist Programmer,4.57,2025-03-24
+REG2023ECE1204,Naveen Kumar 205,student_205@college.edu,9857775541,Electronics and Communication Engineering,6.99,3,2023,77,59,82,0,"Cloud, AWS, Python, Docker",Not Placed,,,0.0,
+REG2026IT1205,Vikram Prabhu 206,student_206@college.edu,9851279258,Information Technology,8.3,0,2026,80,59,85,0,"Cloud, AWS, Python, Docker",Placed,Zoho,Member Technical Staff,8.41,2026-03-12
+REG2025IT1206,Meera Nambiar 207,student_207@college.edu,9881967803,Information Technology,7.82,0,2025,70,75,78,2,"Embedded C, IoT, Microcontrollers",Placed,Zoho,Member Technical Staff,9.4,2025-03-26
+REG2024MECH1207,Rohit Sundar 208,student_208@college.edu,9872325142,Mechanical Engineering,5.93,0,2024,62,81,74,0,"Python, SQL, Machine Learning",Placed,Wipro,Project Engineer,3.15,2024-03-14
+REG2023CSE1208,Akash Patel 209,student_209@college.edu,9816434323,Computer Science and Engineering,9.3,2,2023,60,62,84,3,"Embedded C, IoT, Microcontrollers",Placed,Wipro,Project Engineer,4.08,2023-03-27
+REG2025IT1209,Meera Nambiar 210,student_210@college.edu,9820311825,Information Technology,9.58,0,2025,77,81,77,1,"Web Development, JavaScript, React, Node.js",Placed,Google,Software Engineer,22.89,2025-03-23
+REG2025CSE1210,Naveen Kumar 211,student_211@college.edu,9835557004,Computer Science and Engineering,6.93,0,2025,82,71,68,1,"AutoCAD, SolidWorks, MATLAB",Placed,Cognizant,Programmer Analyst,4.47,2025-03-20
+REG2024IT1211,Tarun Vijay 212,student_212@college.edu,9864934254,Information Technology,7.17,1,2024,56,63,64,1,"Web Development, JavaScript, React, Node.js",Not Placed,,,0.0,
+REG2026CSE1212,Chetan Kumar 213,student_213@college.edu,9835061794,Computer Science and Engineering,7.91,3,2026,48,61,69,1,"Python, SQL, Machine Learning",Not Placed,,,0.0,
+REG2025CSE1213,Uma Shankar 214,student_214@college.edu,9856884754,Computer Science and Engineering,7.97,0,2025,82,82,74,2,"Web Development, JavaScript, React, Node.js",Placed,LTI Mindtree,Graduate Trainee,5.52,2025-03-25
+REG2023CSE1214,Aishwarya Rai 215,student_215@college.edu,9876725931,Computer Science and Engineering,8.32,0,2023,93,87,70,0,"Cloud, AWS, Python, Docker",Placed,Zoho,Member Technical Staff,8.56,2023-03-20
+REG2024ECE1215,Abhishek Bachchan 216,student_216@college.edu,9862073536,Electronics and Communication Engineering,9.81,0,2024,99,99,84,1,"C++, Data Structures, Algorithms",Placed,Zoho,Member Technical Staff,9.13,2024-03-15
+REG2023ECE1216,Manoj Bajpayee 217,student_217@college.edu,9894065081,Electronics and Communication Engineering,7.41,2,2023,73,63,54,2,"Embedded C, IoT, Microcontrollers",Not Placed,,,0.0,
+REG2025IT1217,Aishwarya Rai 218,student_218@college.edu,9842676719,Information Technology,6.72,0,2025,57,59,70,3,"AutoCAD, SolidWorks, MATLAB",Placed,Cognizant,Programmer Analyst,4.13,2025-03-17
+REG2023MECH1218,Aarav Sharma 219,student_219@college.edu,9812416826,Mechanical Engineering,6.08,0,2023,44,65,64,2,"Web Development, JavaScript, React, Node.js",Placed,Wipro,Project Engineer,3.33,2023-03-22
+REG2024IT1219,Gautam Singhania 220,student_220@college.edu,9818499970,Information Technology,6.8,3,2024,69,72,61,1,"Embedded C, IoT, Microcontrollers",Not Placed,,,0.0,
+REG2025CSE1220,Sanjay Dutt 221,student_221@college.edu,9832311047,Computer Science and Engineering,7.56,0,2025,69,69,80,2,"AutoCAD, SolidWorks, MATLAB",Placed,Accenture,Associate Software Engineer,4.39,2025-03-16
+REG2026EEE1221,Rithika Sen 222,student_222@college.edu,9817284268,Electrical and Electronics Engineering,9.57,0,2026,86,77,95,1,"Java, Spring Boot, MySQL",Placed,LTI Mindtree,Graduate Trainee,4.58,2026-03-21
+REG2024CSE1222,Pooja Hegde 223,student_223@college.edu,9853682162,Computer Science and Engineering,7.03,0,2024,84,81,54,1,"AutoCAD, SolidWorks, MATLAB",Placed,Wipro,Project Engineer,3.57,2024-03-25
+REG2025MECH1223,Swetha Mohan 224,student_224@college.edu,9820298825,Mechanical Engineering,7.85,0,2025,81,72,67,0,"Embedded C, IoT, Microcontrollers",Not Placed,,,0.0,
+REG2023CSE1224,Suresh Raina 225,student_225@college.edu,9810189073,Computer Science and Engineering,7.58,0,2023,78,40,66,1,"Java, Spring Boot, MySQL",Not Placed,,,0.0,
+REG2025MECH1225,Vidya Balan 226,student_226@college.edu,9864745659,Mechanical Engineering,8.91,0,2025,99,96,72,0,"Java, Spring Boot, MySQL",Placed,Microsoft,Cloud Engineer,19.84,2025-03-14
+REG2023CSE1226,Chetan Kumar 227,student_227@college.edu,9844613597,Computer Science and Engineering,9.9,0,2023,83,87,96,0,"Embedded C, IoT, Microcontrollers",Placed,Zoho,Member Technical Staff,9.27,2023-03-23
+REG2024EEE1227,Karthik Raja 228,student_228@college.edu,9869546219,Electrical and Electronics Engineering,7.02,0,2024,79,64,68,2,"Web Development, JavaScript, React, Node.js",Placed,TCS,Systems Engineer,4.67,2024-03-19
+REG2025IT1228,Rohit Sundar 229,student_229@college.edu,9811985681,Information Technology,7.06,4,2025,49,46,68,0,"AutoCAD, SolidWorks, MATLAB",Not Placed,,,0.0,
+REG2023MECH1229,Aditi Rao 230,student_230@college.edu,9875586599,Mechanical Engineering,8.75,0,2023,85,85,60,0,"Java, Spring Boot, MySQL",Placed,LTI Mindtree,Graduate Trainee,4.91,2023-03-19
+REG2023CSE1230,Aarav Sharma 231,student_231@college.edu,9855278419,Computer Science and Engineering,8.35,3,2023,82,70,84,0,"Embedded C, IoT, Microcontrollers",Not Placed,,,0.0,
+REG2025IT1231,Harini Sundaram 232,student_232@college.edu,9864594159,Information Technology,9.63,0,2025,95,85,73,3,"C++, Data Structures, Algorithms",Placed,Microsoft,Cloud Engineer,18.91,2025-03-20
+REG2025MECH1232,Arjun Reddy 233,student_233@college.edu,9851252240,Mechanical Engineering,8.24,2,2025,74,73,78,1,"Web Development, JavaScript, React, Node.js",Not Placed,,,0.0,
+REG2025IT1233,Yash Gowda 234,student_234@college.edu,9860877374,Information Technology,7.2,1,2025,77,57,74,1,"Web Development, JavaScript, React, Node.js",Placed,TCS,Systems Engineer,4.39,2025-03-14
+REG2025ECE1234,Tarun Vijay 235,student_235@college.edu,9867731487,Electronics and Communication Engineering,8.25,0,2025,74,88,91,2,"Embedded C, IoT, Microcontrollers",Placed,LTI Mindtree,Graduate Trainee,5.71,2025-03-10
+REG2024ECE1235,Dinesh Karthik 236,student_236@college.edu,9841148181,Electronics and Communication Engineering,8.82,1,2024,67,86,68,2,"AutoCAD, SolidWorks, MATLAB",Placed,Accenture,Associate Software Engineer,4.68,2024-03-19
+REG2024IT1236,Vidya Balan 237,student_237@college.edu,9851999675,Information Technology,8.5,2,2024,57,55,49,0,"Web Development, JavaScript, React, Node.js",Not Placed,,,0.0,
+REG2024ECE1237,Meera Nambiar 238,student_238@college.edu,9823984342,Electronics and Communication Engineering,8.16,0,2024,54,92,79,1,"Embedded C, IoT, Microcontrollers",Not Placed,,,0.0,
+REG2023IT1238,Karthik Raja 239,student_239@college.edu,9812343136,Information Technology,8.77,0,2023,99,75,99,2,"Java, Spring Boot, MySQL",Placed,Zoho,Member Technical Staff,8.46,2023-03-18
+REG2026MECH1239,Akash Patel 240,student_240@college.edu,9823710025,Mechanical Engineering,8.89,0,2026,70,95,94,1,"C++, Data Structures, Algorithms",Placed,Google,Software Engineer,21.83,2026-03-24
+REG2024CSE1240,Naveen Kumar 241,student_241@college.edu,9875320191,Computer Science and Engineering,9.12,1,2024,77,85,85,0,"AutoCAD, SolidWorks, MATLAB",Placed,Infosys,Specialist Programmer,5.16,2024-03-11
+REG2024CSE1241,Rahul Dravid 242,student_242@college.edu,9873077612,Computer Science and Engineering,8.31,1,2024,70,98,73,2,"AutoCAD, SolidWorks, MATLAB",Placed,Zoho,Member Technical Staff,9.2,2024-03-19
+REG2024MECH1242,Uma Shankar 243,student_243@college.edu,9822479981,Mechanical Engineering,7.42,1,2024,70,60,81,1,"Java, Spring Boot, MySQL",Not Placed,,,0.0,
+REG2026EEE1243,Rahul Dravid 244,student_244@college.edu,9837898230,Electrical and Electronics Engineering,7.76,0,2026,84,68,65,0,"AutoCAD, SolidWorks, MATLAB",Not Placed,,,0.0,
+REG2023IT1244,Gautam Singhania 245,student_245@college.edu,9881264168,Information Technology,8.93,1,2023,89,78,86,1,"Python, SQL, Machine Learning",Placed,Infosys,Specialist Programmer,4.24,2023-03-25
+REG2024ECE1245,Deepa Krishnan 246,student_246@college.edu,9839073121,Electronics and Communication Engineering,6.7,0,2024,59,58,73,0,"Java, Spring Boot, MySQL",Placed,Cognizant,Programmer Analyst,4.05,2024-03-22
+REG2024CSE1246,Vikram Prabhu 247,student_247@college.edu,9854923382,Computer Science and Engineering,8.01,0,2024,74,86,87,0,"Python, SQL, Machine Learning",Placed,LTI Mindtree,Graduate Trainee,4.92,2024-03-11
+REG2025CSE1247,Zara Khan 248,student_248@college.edu,9896817611,Computer Science and Engineering,7.17,0,2025,73,44,99,2,"Python, SQL, Machine Learning",Placed,Wipro,Project Engineer,4.49,2025-03-20
+REG2023IT1248,Aishwarya Rai 249,student_249@college.edu,9869073295,Information Technology,7.63,0,2023,70,57,78,0,"Python, SQL, Machine Learning",Placed,Accenture,Associate Software Engineer,4.59,2023-03-25
+REG2026IT1249,Naveen Kumar 250,student_250@college.edu,9858544005,Information Technology,9.01,0,2026,99,70,77,1,"Python, SQL, Machine Learning",Placed,LTI Mindtree,Graduate Trainee,4.97,2026-03-24
+REG2026IT1250,Vidya Balan 251,student_251@college.edu,9848689071,Information Technology,7.81,0,2026,80,86,75,1,"Java, Spring Boot, MySQL",Placed,LTI Mindtree,Graduate Trainee,5.05,2026-03-13
+REG2024CSE1251,Rithika Sen 252,student_252@college.edu,9831691366,Computer Science and Engineering,7.65,0,2024,82,95,56,0,"Embedded C, IoT, Microcontrollers",Placed,Infosys,Specialist Programmer,4.09,2024-03-24
+REG2025MECH1252,Vidya Balan 253,student_253@college.edu,9816240327,Mechanical Engineering,6.1,0,2025,69,55,58,3,"AutoCAD, SolidWorks, MATLAB",Not Placed,,,0.0,
+REG2026MECH1253,Rithika Sen 254,student_254@college.edu,9839915838,Mechanical Engineering,8.42,0,2026,93,77,74,0,"AutoCAD, SolidWorks, MATLAB",Placed,Accenture,Associate Software Engineer,4.82,2026-03-17
+REG2025ECE1254,Sneha Reddy 255,student_255@college.edu,9895346315,Electronics and Communication Engineering,8.31,0,2025,81,79,73,0,"Cloud, AWS, Python, Docker",Placed,Infosys,Specialist Programmer,4.25,2025-03-26
+REG2023IT1255,Manoj Bajpayee 256,student_256@college.edu,9841478135,Information Technology,9.9,0,2023,76,99,89,0,"Web Development, JavaScript, React, Node.js",Placed,Google,Software Engineer,21.63,2023-03-25
+REG2024CSE1256,Manoj Bajpayee 257,student_257@college.edu,9834693539,Computer Science and Engineering,7.26,0,2024,75,55,63,0,"Web Development, JavaScript, React, Node.js",Placed,Wipro,Project Engineer,3.61,2024-03-21
+REG2025EEE1257,Aditi Rao 258,student_258@college.edu,9836099300,Electrical and Electronics Engineering,7.84,0,2025,67,77,86,0,"Embedded C, IoT, Microcontrollers",Placed,Accenture,Associate Software Engineer,4.32,2025-03-19
+REG2024ECE1258,Vidya Balan 259,student_259@college.edu,9838116038,Electronics and Communication Engineering,7.87,0,2024,69,87,75,1,"Cloud, AWS, Python, Docker",Placed,LTI Mindtree,Graduate Trainee,5.24,2024-03-14
+REG2025CSE1259,Karthik Raja 260,student_260@college.edu,9847706524,Computer Science and Engineering,9.34,0,2025,94,95,84,3,"C++, Data Structures, Algorithms",Placed,Microsoft,Cloud Engineer,19.09,2025-03-23
+REG2026MECH1260,Vikram Prabhu 261,student_261@college.edu,9831978898,Mechanical Engineering,7.5,0,2026,87,73,70,0,"Cloud, AWS, Python, Docker",Placed,Infosys,Specialist Programmer,4.31,2026-03-14
+REG2026EEE1261,Uma Shankar 262,student_262@college.edu,9853640858,Electrical and Electronics Engineering,7.91,0,2026,76,88,77,1,"AutoCAD, SolidWorks, MATLAB",Placed,LTI Mindtree,Graduate Trainee,5.32,2026-03-15
+REG2024MECH1262,Ananya Iyer 263,student_263@college.edu,9822063550,Mechanical Engineering,8.27,0,2024,82,40,86,1,"Web Development, JavaScript, React, Node.js",Placed,Infosys,Specialist Programmer,4.61,2024-03-25
+REG2023ECE1263,Uma Shankar 264,student_264@college.edu,9874617617,Electronics and Communication Engineering,7.81,2,2023,85,71,66,2,"Cloud, AWS, Python, Docker",Placed,Wipro,Project Engineer,3.15,2023-03-22
+REG2026ECE1264,Ishaan Verma 265,student_265@college.edu,9851505238,Electronics and Communication Engineering,7.11,0,2026,72,57,64,1,"Java, Spring Boot, MySQL",Placed,TCS,Systems Engineer,3.67,2026-03-13
+REG2025IT1265,Nisha Agarwal 266,student_266@college.edu,9857614485,Information Technology,7.81,0,2025,99,47,72,0,"Web Development, JavaScript, React, Node.js",Not Placed,,,0.0,
+REG2023MECH1266,Naveen Kumar 267,student_267@college.edu,9898862643,Mechanical Engineering,8.78,0,2023,89,90,67,0,"AutoCAD, SolidWorks, MATLAB",Placed,LTI Mindtree,Graduate Trainee,4.68,2023-03-15
+REG2026EEE1267,Deepa Krishnan 268,student_268@college.edu,9810506995,Electrical and Electronics Engineering,6.47,0,2026,43,79,59,1,"AutoCAD, SolidWorks, MATLAB",Placed,Cognizant,Programmer Analyst,4.94,2026-03-18
+REG2026CSE1268,Chetan Kumar 269,student_269@college.edu,9871555999,Computer Science and Engineering,7.75,0,2026,83,71,70,2,"Web Development, JavaScript, React, Node.js",Placed,Infosys,Specialist Programmer,4.6,2026-03-20
+REG2024CSE1269,Akash Patel 270,student_270@college.edu,9881831204,Computer Science and Engineering,6.83,0,2024,71,77,78,0,"Embedded C, IoT, Microcontrollers",Placed,Wipro,Project Engineer,3.15,2024-03-21
+REG2024IT1270,Kavya Madhavan 271,student_271@college.edu,9890443169,Information Technology,8.91,0,2024,99,99,84,1,"Cloud, AWS, Python, Docker",Placed,Amazon,SDE-1,18.67,2024-03-16
+REG2024EEE1271,Uma Shankar 272,student_272@college.edu,9846635794,Electrical and Electronics Engineering,5.92,0,2024,67,73,65,2,"Java, Spring Boot, MySQL",Not Placed,,,0.0,
+REG2023MECH1272,Harini Sundaram 273,student_273@college.edu,9863979613,Mechanical Engineering,6.99,0,2023,66,88,78,2,"AutoCAD, SolidWorks, MATLAB",Placed,Cognizant,Programmer Analyst,4.57,2023-03-11
+REG2024CSE1273,Pranav Anand 274,student_274@college.edu,9831219187,Computer Science and Engineering,8.01,1,2024,56,79,75,3,"Java, Spring Boot, MySQL",Placed,Infosys,Specialist Programmer,4.93,2024-03-26
+REG2025IT1274,Pranav Anand 275,student_275@college.edu,9813053407,Information Technology,9.32,1,2025,79,83,88,2,"Embedded C, IoT, Microcontrollers",Placed,Accenture,Associate Software Engineer,5.4,2025-03-20
+REG2023IT1275,Suresh Raina 276,student_276@college.edu,9856270592,Information Technology,7.53,1,2023,57,42,72,1,"C++, Data Structures, Algorithms",Placed,Accenture,Associate Software Engineer,4.15,2023-03-16
+REG2024MECH1276,Zara Khan 277,student_277@college.edu,9879580185,Mechanical Engineering,6.99,3,2024,46,43,73,1,"AutoCAD, SolidWorks, MATLAB",Not Placed,,,0.0,
+REG2024EEE1277,Zara Khan 278,student_278@college.edu,9835256241,Electrical and Electronics Engineering,9.67,0,2024,96,80,80,1,"Web Development, JavaScript, React, Node.js",Placed,Microsoft,Cloud Engineer,19.21,2024-03-20
+REG2024EEE1278,Deepa Krishnan 279,student_279@college.edu,9842250847,Electrical and Electronics Engineering,6.01,0,2024,80,85,40,0,"Python, SQL, Machine Learning",Placed,Cognizant,Programmer Analyst,4.02,2024-03-19
+REG2026IT1279,Sai Pallavi 280,student_280@college.edu,9853866822,Information Technology,5.18,0,2026,58,44,58,1,"Java, Spring Boot, MySQL",Placed,Wipro,Project Engineer,4.4,2026-03-21
+REG2024IT1280,Sai Pallavi 281,student_281@college.edu,9814102553,Information Technology,8.08,0,2024,62,78,91,1,"C++, Data Structures, Algorithms",Placed,LTI Mindtree,Graduate Trainee,4.64,2024-03-20
+REG2024CSE1281,Varun Dhawan 282,student_282@college.edu,9823474284,Computer Science and Engineering,7.05,2,2024,64,61,80,0,"C++, Data Structures, Algorithms",Not Placed,,,0.0,
+REG2025CSE1282,Nisha Agarwal 283,student_283@college.edu,9860806795,Computer Science and Engineering,6.48,0,2025,78,60,77,2,"C++, Data Structures, Algorithms",Placed,Wipro,Project Engineer,4.43,2025-03-11
+REG2024EEE1283,Suresh Raina 284,student_284@college.edu,9877985200,Electrical and Electronics Engineering,8.38,2,2024,62,91,91,1,"Java, Spring Boot, MySQL",Not Placed,,,0.0,
+REG2023EEE1284,Uma Shankar 285,student_285@college.edu,9865229755,Electrical and Electronics Engineering,7.87,0,2023,73,65,76,3,"Embedded C, IoT, Microcontrollers",Placed,Infosys,Specialist Programmer,4.57,2023-03-19
+REG2024MECH1285,Sanjay Dutt 286,student_286@college.edu,9830849083,Mechanical Engineering,6.98,3,2024,53,50,72,0,"Java, Spring Boot, MySQL",Not Placed,,,0.0,
+REG2023MECH1286,Uma Shankar 287,student_287@college.edu,9872632743,Mechanical Engineering,6.19,0,2023,52,47,59,0,"Python, SQL, Machine Learning",Not Placed,,,0.0,
+REG2023IT1287,Arjun Reddy 288,student_288@college.edu,9811418060,Information Technology,8.56,0,2023,88,62,76,1,"Python, SQL, Machine Learning",Placed,Infosys,Specialist Programmer,4.33,2023-03-14
+REG2024ECE1288,Meera Nambiar 289,student_289@college.edu,9835657039,Electronics and Communication Engineering,8.32,0,2024,77,70,84,0,"Cloud, AWS, Python, Docker",Placed,Infosys,Specialist Programmer,4.18,2024-03-27
+REG2024MECH1289,Ananya Iyer 290,student_290@college.edu,9869042154,Mechanical Engineering,7.49,0,2024,77,69,85,1,"C++, Data Structures, Algorithms",Placed,TCS,Systems Engineer,4.8,2024-03-11
+REG2026EEE1290,Vidya Balan 291,student_291@college.edu,9832009867,Electrical and Electronics Engineering,9.63,0,2026,78,85,84,2,"Python, SQL, Machine Learning",Placed,Zoho,Member Technical Staff,8.04,2026-03-19
+REG2024CSE1291,Kavya Madhavan 292,student_292@college.edu,9892028383,Computer Science and Engineering,6.42,0,2024,58,50,62,0,"Python, SQL, Machine Learning",Placed,Wipro,Project Engineer,4.36,2024-03-16
+REG2024IT1292,Sanjay Dutt 293,student_293@college.edu,9837381819,Information Technology,5.92,1,2024,63,30,64,1,"Java, Spring Boot, MySQL",Not Placed,,,0.0,
+REG2025CSE1293,Suresh Raina 294,student_294@college.edu,9896536512,Computer Science and Engineering,6.84,0,2025,62,62,75,1,"C++, Data Structures, Algorithms",Placed,Wipro,Project Engineer,3.54,2025-03-23
+REG2023MECH1294,Sneha Reddy 295,student_295@college.edu,9892320668,Mechanical Engineering,7.55,0,2023,93,49,59,1,"AutoCAD, SolidWorks, MATLAB",Not Placed,,,0.0,
+REG2025ECE1295,Bhavna Nair 296,student_296@college.edu,9876075147,Electronics and Communication Engineering,7.87,0,2025,70,84,52,3,"Cloud, AWS, Python, Docker",Placed,LTI Mindtree,Graduate Trainee,4.75,2025-03-16
+REG2023CSE1296,Vidya Balan 297,student_297@college.edu,9811196311,Computer Science and Engineering,7.33,1,2023,68,63,66,2,"Cloud, AWS, Python, Docker",Placed,Wipro,Project Engineer,3.92,2023-03-14
+REG2026ECE1297,Yash Gowda 298,student_298@college.edu,9840760593,Electronics and Communication Engineering,7.99,0,2026,87,54,64,1,"Embedded C, IoT, Microcontrollers",Placed,Infosys,Specialist Programmer,5.38,2026-03-21
+REG2023ECE1298,Rahul Dravid 299,student_299@college.edu,9888518263,Electronics and Communication Engineering,6.22,0,2023,45,53,60,1,"Embedded C, IoT, Microcontrollers",Not Placed,,,0.0,
+REG2024IT1299,Sneha Reddy 300,student_300@college.edu,9861983779,Information Technology,9.19,0,2024,64,76,82,1,"Embedded C, IoT, Microcontrollers",Placed,Infosys,Specialist Programmer,5.18,2024-03-13

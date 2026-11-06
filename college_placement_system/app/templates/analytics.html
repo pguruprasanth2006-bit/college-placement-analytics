@@ -1,0 +1,354 @@
+{% extends "base.html" %}
+
+{% block title %}Analytics - PlacementHub{% endblock %}
+{% block page_title %}Placement Analytics & Business Intelligence{% endblock %}
+
+{% block content %}
+<!-- Top Metrics Row (Pandas + NumPy) -->
+<div class="row g-3 mb-4">
+    <div class="col-sm-6 col-xl-3">
+        <div class="kpi-card">
+            <div class="kpi-title">Overall Placement Rate</div>
+            <div class="kpi-value text-primary">{{ summary.placement_percentage }}%</div>
+            <small class="text-muted">{{ summary.total_placed }} placed of {{ summary.total_students }} students</small>
+        </div>
+    </div>
+    <div class="col-sm-6 col-xl-3">
+        <div class="kpi-card">
+            <div class="kpi-title">Mean Salary Package</div>
+            <div class="kpi-value text-success">{{ summary.average_package }} <small class="fs-6 text-muted">LPA</small></div>
+            <small class="text-muted">Calculated using NumPy Mean</small>
+        </div>
+    </div>
+    <div class="col-sm-6 col-xl-3">
+        <div class="kpi-card">
+            <div class="kpi-title">Median Salary Package</div>
+            <div class="kpi-value text-info">{{ summary.median_package }} <small class="fs-6 text-muted">LPA</small></div>
+            <small class="text-muted">Calculated using NumPy Median</small>
+        </div>
+    </div>
+    <div class="col-sm-6 col-xl-3">
+        <div class="kpi-card">
+            <div class="kpi-title">Peak Offer Secured</div>
+            <div class="kpi-value text-warning">{{ summary.highest_package }} <small class="fs-6 text-muted">LPA</small></div>
+            <small class="text-muted">Minimum: {{ summary.minimum_package }} LPA</small>
+        </div>
+    </div>
+</div>
+
+<!-- Tabs for Analytics views -->
+<ul class="nav nav-pills mb-4 gap-2" id="analyticsTabs" role="tablist">
+    <li class="nav-item" role="presentation">
+        <button class="nav-link active px-4 py-2 fw-semibold" id="dept-tab" data-bs-toggle="tab" data-bs-target="#dept-pane" type="button" role="tab">
+            <i class="bi bi-diagram-3-fill me-2"></i>Department Breakdown
+        </button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link px-4 py-2 fw-semibold" id="comp-tab" data-bs-toggle="tab" data-bs-target="#comp-pane" type="button" role="tab">
+            <i class="bi bi-buildings-fill me-2"></i>Company Recruitment
+        </button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link px-4 py-2 fw-semibold" id="cgpa-tab" data-bs-toggle="tab" data-bs-target="#cgpa-pane" type="button" role="tab">
+            <i class="bi bi-mortarboard me-2"></i>CGPA vs Placement
+        </button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link px-4 py-2 fw-semibold" id="spark-tab" data-bs-toggle="tab" data-bs-target="#spark-pane" type="button" role="tab">
+            <i class="bi bi-lightning-charge-fill me-2 text-warning"></i>PySpark Distributed Engine
+        </button>
+    </li>
+</ul>
+
+<div class="tab-content" id="analyticsTabsContent">
+    <!-- Department Breakdown Pane -->
+    <div class="tab-pane fade show active" id="dept-pane" role="tabpanel">
+        <div class="row g-4">
+            <div class="col-lg-7">
+                <div class="dashboard-card">
+                    <div class="dashboard-card-header">
+                        <span>Department Performance Overview (Pandas Aggregation)</span>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table custom-table table-hover align-middle mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Department</th>
+                                    <th>Total</th>
+                                    <th>Placed</th>
+                                    <th>Success Rate</th>
+                                    <th>Avg Salary</th>
+                                    <th>Max Salary</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for d in dept_stats %}
+                                <tr>
+                                    <td>
+                                        <strong>{{ d.department_name }}</strong>
+                                        <span class="badge bg-light text-muted border ms-1">{{ d.department_code }}</span>
+                                    </td>
+                                    <td>{{ d.total_students }}</td>
+                                    <td class="text-success fw-semibold">{{ d.placed_students }}</td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <div class="progress flex-grow-1" style="height: 6px; width: 60px;">
+                                                <div class="progress-bar bg-primary" role="progressbar" style="width: {{ d.placement_percentage }}%"></div>
+                                            </div>
+                                            <span class="fw-bold">{{ d.placement_percentage }}%</span>
+                                        </div>
+                                    </td>
+                                    <td>{{ d.average_salary }} LPA</td>
+                                    <td class="fw-bold text-success">{{ d.highest_salary }} LPA</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="dashboard-card">
+                    <div class="dashboard-card-header">
+                        <span>Department Placement Rates</span>
+                    </div>
+                    <div class="dashboard-card-body" style="height: 320px;">
+                        <canvas id="deptAnalyticsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Company Recruitment Pane -->
+    <div class="tab-pane fade" id="comp-pane" role="tabpanel">
+        <div class="dashboard-card">
+            <div class="dashboard-card-header">
+                <span>Company-wise Recruitment Analysis (NumPy & Pandas Grouping)</span>
+            </div>
+            <div class="table-responsive">
+                <table class="table custom-table table-hover align-middle mb-0">
+                    <thead>
+                        <tr>
+                            <th>Recruiting Company</th>
+                            <th>Hires Count</th>
+                            <th>Average Package (LPA)</th>
+                            <th>Highest Package (LPA)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% if company_stats %}
+                            {% for c in company_stats %}
+                            <tr>
+                                <td class="fw-bold text-dark"><i class="bi bi-building me-2 text-primary"></i>{{ c.company_name }}</td>
+                                <td><span class="badge bg-primary px-3 py-2 fs-6">{{ c.placed_count }}</span></td>
+                                <td><strong>{{ c.average_package }} LPA</strong></td>
+                                <td class="text-success fw-bold">{{ c.highest_package }} LPA</td>
+                            </tr>
+                            {% endfor %}
+                        {% else %}
+                            <tr>
+                                <td colspan="4" class="text-center py-4 text-muted">No company placement records found.</td>
+                            </tr>
+                        {% endif %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- CGPA vs Placement Pane -->
+    <div class="tab-pane fade" id="cgpa-pane" role="tabpanel">
+        <div class="row g-4">
+            <div class="col-lg-6">
+                <div class="dashboard-card">
+                    <div class="dashboard-card-header">
+                        <span>CGPA Tiers Correlation with Placement Success</span>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table custom-table table-hover align-middle mb-0">
+                            <thead>
+                                <tr>
+                                    <th>CGPA Range</th>
+                                    <th>Total Students</th>
+                                    <th>Placed</th>
+                                    <th>Placement Rate</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for cg in cgpa_stats %}
+                                <tr>
+                                    <td><strong>{{ cg.tier }}</strong></td>
+                                    <td>{{ cg.total_students }}</td>
+                                    <td>{{ cg.placed_students }}</td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <div class="progress flex-grow-1" style="height: 6px; width: 60px;">
+                                                <div class="progress-bar bg-success" style="width: {{ cg.placement_percentage }}%"></div>
+                                            </div>
+                                            <span class="fw-bold">{{ cg.placement_percentage }}%</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="dashboard-card">
+                    <div class="dashboard-card-header">
+                        <span>Placement Rate by CGPA Tier</span>
+                    </div>
+                    <div class="dashboard-card-body" style="height: 300px;">
+                        <canvas id="cgpaChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PySpark Distributed Engine Pane -->
+    <div class="tab-pane fade" id="spark-pane" role="tabpanel">
+        <div class="card border-0 shadow-sm rounded-3 p-4 mb-4 bg-white">
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                <div>
+                    <h5 class="fw-bold text-dark mb-1">
+                        <i class="bi bi-lightning-charge-fill text-warning me-2"></i>PySpark Distributed Processing Engine
+                    </h5>
+                    <p class="text-muted small mb-0">
+                        High-throughput distributed computations executing MapReduce and DataFrame transforms on large-scale placement clusters.
+                    </p>
+                </div>
+                <form method="POST" action="{{ url_for('analytics.run_spark') }}">
+                    <button type="submit" class="btn btn-warning fw-bold px-3 shadow-sm">
+                        <i class="bi bi-play-circle-fill me-1"></i>Run Live PySpark Analysis
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        {% if spark_data and spark_data.get('success') %}
+        <div class="alert alert-success border-0 shadow-sm d-flex justify-content-between align-items-center">
+            <div>
+                <i class="bi bi-check-circle-fill me-2"></i>
+                Distributed Analysis Engine: <strong>{{ spark_data.engine }}</strong>
+            </div>
+            <span class="badge bg-success">Status: Completed</span>
+        </div>
+
+        <div class="row g-4 mb-4">
+            <!-- Spark Dept Aggregates -->
+            <div class="col-lg-7">
+                <div class="dashboard-card">
+                    <div class="dashboard-card-header">
+                        <span>PySpark Department-level Aggregates (DataFrame API)</span>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table custom-table table-hover align-middle mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Department</th>
+                                    <th>Total</th>
+                                    <th>Placed</th>
+                                    <th>Rate</th>
+                                    <th>Avg Salary</th>
+                                    <th>Max Salary</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for d in spark_data.department_aggregates %}
+                                <tr>
+                                    <td><strong>{{ d.department }}</strong></td>
+                                    <td>{{ d.total_students }}</td>
+                                    <td class="text-success fw-bold">{{ d.placed_students }}</td>
+                                    <td><span class="badge bg-primary">{{ d.placement_percentage }}%</span></td>
+                                    <td>{{ d.avg_salary }} LPA</td>
+                                    <td class="fw-bold text-success">{{ d.max_salary }} LPA</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Spark Company Stats -->
+            <div class="col-lg-5">
+                <div class="dashboard-card">
+                    <div class="dashboard-card-header">
+                        <span>PySpark Company-wise Stats</span>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table custom-table table-hover align-middle mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Company</th>
+                                    <th>Hires</th>
+                                    <th>Avg Pkg</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for c in spark_data.company_statistics[:6] %}
+                                <tr>
+                                    <td><strong>{{ c.company_name }}</strong></td>
+                                    <td><span class="badge bg-secondary">{{ c.placed_count }}</span></td>
+                                    <td>{{ c.avg_package }} LPA</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <div class="card border-0 shadow-sm p-5 text-center rounded-3 bg-white">
+            <i class="bi bi-cpu fs-1 text-warning mb-3"></i>
+            <h5 class="fw-bold text-dark">No PySpark distributed output generated yet.</h5>
+            <p class="text-muted">Click the "Run Live PySpark Analysis" button above to invoke the Spark processing service and compute distributed metrics.</p>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Department analytics bar chart
+        const deptLabels = {{ dept_stats | map(attribute='department_code') | list | tojson }};
+        const deptRates = {{ dept_stats | map(attribute='placement_percentage') | list | tojson }};
+
+        const ctxDept = document.getElementById('deptAnalyticsChart');
+        if (ctxDept) {
+            new Chart(ctxDept, {
+                type: 'bar',
+                data: {
+                    labels: deptLabels,
+                    datasets: [{
+                        label: 'Placement %',
+                        data: deptRates,
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, max: 100 }
+                    }
+                }
+            });
+        }
+
+        // CGPA Tier chart
+        const cgpaTiers = {{ cgpa_stats | map(attribute='tier') | list | tojson }};
+        const cgpaRates = {{ cgpa_stats | map(attribute='placement_percentage') | list | tojson }};
+        renderCgpaChart('cgpaChart', cgpaTiers, cgpaRates);
+    });
+</script>
+{% endblock %}
+
